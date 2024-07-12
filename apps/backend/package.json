@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "CARE Backend.",
+  "description": "UNITE Backend.",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bug-Bust3rs/CARE-Community-Aid-and-Resource-Exchange.git"
+    "url": "git+https://github.com/Bug-Bust3rs/UNITE.git"
   },
   "keywords": [
     "reactjs",
@@ -24,9 +24,9 @@
   "author": "Bug Busters",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Bug-Bust3rs/CARE-Community-Aid-and-Resource-Exchange/issues"
+    "url": "https://github.com/Bug-Bust3rs/UNITE.git/issues"
   },
-  "homepage": "https://github.com/Bug-Bust3rs/CARE-Community-Aid-and-Resource-Exchange#readme",
+  "homepage": "https://github.com/Bug-Bust3rs/UNITE.git#readme",
   "prisma": {
     "schema": "./src/prisma/schema.prisma"
   },

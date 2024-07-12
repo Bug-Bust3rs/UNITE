@@ -8,4 +8,5 @@
   </a>
 
   <h1 align="center">UNITE ✨</h1> 
+  git remote add origin https://github.com/Bug-Bust3rs/UNITE.git
  
