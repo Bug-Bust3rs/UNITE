@@ -1,0 +1,111 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String          @id @default(uuid())
+  email         String          @unique
+  name          String
+  phone         String             @unique
+  isVerified    Boolean         @default(false)
+  location      String?
+  password      String
+  profiles      Profile[] 
+  jobPosts      JobPost[]
+  petPosts      PetsPost[]
+  donationPosts DonationPosts[]
+  OTPs          OTP[]
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+}
+
+model Profile {
+  id        String   @id @default(uuid())
+  userId    String
+  service   Service  @default(USER)
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model JobPost {
+  id            String      @id @default(uuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  jobType        Service  @default(USER)
+  jobDescription String?
+  published      Boolean  @default(false)
+  author         User     @relation(fields: [authorId], references: [id])
+  authorId       String
+  location       String
+  status         Status   @default(PENDING)
+  fixerId        String?
+}
+
+model PetsPost {
+  id        String      @id @default(uuid())
+  petType   Pet      @default(OTHERS)
+  petImage  String?
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  location  String
+  status    Status   @default(PENDING)
+  fixerId   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DonationPosts {
+  id            String   @id @default(uuid())
+  donationType  Pet      @default(OTHERS)
+  donationImage String?
+  author        User     @relation(fields: [authorId], references: [id])
+  authorId      String
+  location      String
+  status        Status   @default(PENDING)
+  fixerId       String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model OTP {
+  id        String      @id @default(uuid())
+  otp       String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  createdAt DateTime @default(now())
+  expiresAt DateTime @default(dbgenerated("CURRENT_TIMESTAMP + interval '10 minutes'"))
+  updatedAt DateTime @updatedAt
+}
+
+enum Status {
+  COMPLETE
+  PENDING
+}
+
+enum Service {
+  CARPENTER
+  PLUMBER
+  ELECTRICIAN
+  CHARITY
+  USER
+  OTHERS
+}
+
+enum Pet {
+  CAT
+  DOG
+  OTHERS
+}
+
+enum Donation {
+  FOOD
+  BOOKS
+  CLOTHES
+  OTHERS
+}
