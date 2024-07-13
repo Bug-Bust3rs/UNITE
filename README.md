@@ -46,7 +46,7 @@
 
 ### Frameworks
 
-<img src="https://skillicons.dev/icons?i=nextjs,tailwindcss,nodejs,express,nestjs&theme=dark" />
+<img src="https://skillicons.dev/icons?i=react,tailwindcss,nodejs,express,nestjs&theme=dark" />
 
 ### Databases
 
@@ -60,7 +60,7 @@
 
 ## ❤️ Contributing
 
-We welcome contributions to Create My-API!
+We welcome contributions to UNITE!
 
 To get started, please check out the [CONTRIBUTING.md](./CONTRIBUTING.md) file for guidelines on how to contribute. Here are some key points:
 
