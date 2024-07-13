@@ -85,6 +85,10 @@ To get started, please check out the [CONTRIBUTING.md](./CONTRIBUTING.md) file f
 
 If you have any questions, feel free to open an issue or reach out to the project [maintainer](https://www.linkedin.com/in/puskar-roy/).
 
+- [Puskar Roy](https://github.com/Puskar-Roy) 
+- [Shuvadeep Mondal](https://github.com/shuvadeepmondal)
+
+
 **Please ⭐ the repository for show some love!**
 
 ### Puskar Roy 🖋️
