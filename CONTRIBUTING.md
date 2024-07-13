@@ -58,7 +58,25 @@ c. **Fix Bugs in Website 🐛**
      ```
 
 6. **Create a Pull Request 🔄**
-   - Head back to the original repository on GitHub and create a pull request from your branch. Provide a detailed description of your changes and why they should be merged.
+   - Head back to the original repository on GitHub and create a pull request from your branch to dev branch. Provide a detailed description of your changes and why they should be merged.
+
+## 🚨 Important Notice 🚨
+
+**You cannot directly push your changes to the `main` branch.**
+
+All contributions must be made through the `dev` branch. If you create a pull request to the `main` branch, it will be automatically rejected.
+
+### Steps to Contribute:
+1. **Fork** the repository.
+2. **Clone** your forked repository to your local machine.
+3. **Create a new branch** from `dev` for your feature or fix.
+4. **Commit** your changes to the new branch.
+5. **Push** your changes to your forked repository.
+6. **Create a pull request** from your new branch to the `dev` branch in the main repository.
+
+Thank you for your cooperation and happy coding! 🚀
+
+
 
 ## Code of Conduct ❤️
 
