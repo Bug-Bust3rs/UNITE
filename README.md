@@ -74,7 +74,7 @@ To get started, please check out the [CONTRIBUTING.md](./CONTRIBUTING.md) file f
 
 **_Note: If contributions do not follow the guidelines specified in the [CONTRIBUTING.md](./CONTRIBUTING.md) file, the pull request will not be accepted ❌._**
 
-<h2 align = "center">Contributors of create-my-api 🚀</h2>
+<h2 align = "center">Contributors of Unite 🚀</h2>
 <div align = "center">
 <a href="https://github.com/Bug-Bust3rs/UNITE/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Bug-Bust3rs/UNITE" />
@@ -87,6 +87,7 @@ If you have any questions, feel free to open an issue or reach out to the projec
 
 - [Puskar Roy](https://github.com/Puskar-Roy) 
 - [Shuvadeep Mondal](https://github.com/shuvadeepmondal)
+- [Discord](https://discord.gg/WbWmxcAB)
 
 
 **Please ⭐ the repository for show some love!**
