@@ -87,6 +87,7 @@ If you have any questions, feel free to open an issue or reach out to the projec
 
 - [Puskar Roy](https://github.com/Puskar-Roy) 
 - [Shuvadeep Mondal](https://github.com/shuvadeepmondal)
+- [Discord](https://discord.gg/WbWmxcAB)
 
 
 **Please ⭐ the repository for show some love!**
