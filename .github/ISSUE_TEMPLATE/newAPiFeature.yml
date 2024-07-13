@@ -13,7 +13,7 @@ body:
     validations:
       required: true
 
-  - type: textarea
+  - type: textarea 
     id: api-development
     attributes:
       label: Development Approach 🚀
