@@ -17,17 +17,17 @@ const Navbar: React.FC = () => {
   };
 
   const navItems: NavLink[] = [
-    { label: 'About Us', to: '#' },
-    { label: 'Posts', to: '#' },
-    { label: 'Services', to: '#' },
-    { label: 'Testimonials', to: '#' },
-    { label: 'Contact Us', to: '#' },
+    { label: 'About Us', to: '/' },
+    { label: 'Posts', to: '/' },
+    { label: 'Services', to: '/' },
+    { label: 'Testimonials', to: '/' },
+    { label: 'Contact Us', to: '/' },
   ];
 
   return (
     <nav className="sticky top-0 z-50 py-6 px-20 backdrop-blur-lg ">
       <div className="container px-24 mx-auto relative lg:text-sm">
-        <div className="flex justify-between items-center ">
+        <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
             <img className="h-10 w-10 mr-2" src={logo} alt="Logo" /> 
             <span className="text-[1.5rem] font-bold tracking-tight poppins-semibold ">UNITE</span>
