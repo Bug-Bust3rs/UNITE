@@ -110,7 +110,7 @@ const ProfileSetup = () => {
                   </div>
                 </div>
                 <div className="mb-3 space-y-2 w-full text-xs">
-                  <label className="font-semibold text-gray-600 py-2">Company Website</label>
+                  <label className="font-semibold text-gray-600 py-2">Your Any Social</label>
                   <div className="flex flex-wrap items-stretch w-full mb-4 relative">
                     <div className="flex">
                       <span className="flex items-center leading-normal bg-grey-lighter border-1 rounded-r-none border border-r-0 border-blue-300 px-3 whitespace-no-wrap text-grey-dark text-sm w-12 h-10 bg-blue-300 justify-center items-center text-xl rounded-lg text-white">
