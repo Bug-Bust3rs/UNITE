@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import ProfileSetup from "./components/ProfileSetup";
+import Register from "./components/Register";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={ <ProfileSetup/> }/>
+        <Route path="/register" element={ <Register/> }/>
       </Routes>
 
     </>
