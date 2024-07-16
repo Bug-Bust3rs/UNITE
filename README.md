@@ -46,7 +46,7 @@
 
 ### Frameworks
 
-<img src="https://skillicons.dev/icons?i=react,tailwindcss,nodejs,express,nestjs&theme=dark" />
+<img src="https://skillicons.dev/icons?i=react,tailwindcss,nodejs,express&theme=dark" />
 
 ### Databases
 
