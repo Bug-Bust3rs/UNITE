@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import ProfileSetup from "./components/ProfileSetup";
 import Register from "./components/Register";
+import ForgotPassword from "./components/Forgot-Password";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={ <Register/> }/>
         <Route path="/profile" element={ <ProfileSetup/> } />
+        <Route path="/forgot-password" element={ <ForgotPassword/> } />
 
       
       </Routes>
