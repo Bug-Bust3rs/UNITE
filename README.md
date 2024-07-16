@@ -17,7 +17,7 @@
     <a href="https://github.com/Bug-Bust3rs/UNITE"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Bug-Bust3rs/UNITE">View Demo</a>
+    <a href="https://www.myhackathon.xyz">View Demo</a>
     ·
     <a href="https://github.com/Bug-Bust3rs/UNITE/issues">Report Bug</a>
     ·
