@@ -22,5 +22,10 @@
         "src": "/profile",
         "dest": "/"
       }
+      ,
+      {
+        "src": "/otp",
+        "dest": "/"
+      }
     ]
   }
