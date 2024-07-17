@@ -1,8 +1,10 @@
+import Hero from "./Hero"
 
 const Home = () => {
   return (
-    <div className='mt-5'>
-      Home
+    <div className='mt-15'>
+      <Hero/>
+   
     </div>
   )
 }
