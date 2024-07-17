@@ -3,7 +3,7 @@ import { HeroCard2 } from "./HeroCard2"
 import { HeroCard3 } from "./HeroCard3"
 const Hero = () => {
   return (
-    <section className="pt-8 lg:pt-32 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover">
+    <section className="pt-8 mt-[100px] lg:mt-0 lg:pt-32 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative text-center">
         <div className="border border-blue-600 p-1 w-60 mx-auto rounded-full flex items-center justify-between mb-4">
           <span className="font-inter text-xs font-medium text-gray-900 ml-3"
@@ -36,11 +36,8 @@ Join events, offer services, or get help securely with <span  className="text-bl
               stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </a>
-        <div className="flex justify-center items-center gap-5">
-          {/* <img
-            src="https://pagedone.io/asset/uploads/1691054543.png"
-            alt="Dashboard image"
-          /> */}
+        <div className="flex justify-center items-center gap-[-10] lg:gap-5 flex-col lg:flex-row ">
+         
 
          <HeroCard/>
          <HeroCard2/>
