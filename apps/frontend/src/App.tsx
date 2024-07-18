@@ -7,6 +7,7 @@ import Register from "./components/auth/Register";
 import ForgotPassword from "./components/auth/Forgot-Password";
 import OTP from "./components/auth/OTP";
 import { ThemeProvider } from "./context/ThemeCOntext";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
         </Routes>
       </ThemeProvider>
+      <Footer/>
     </>
   );
 }
