@@ -13,8 +13,8 @@ export default function ForgotPassword(): JSX.Element {
   };
 
   return (
-    <main className="w-full h-screen flex dark:bg-slate-800">
-      <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[500px] sm:max-w-[900px] rounded-2xl">
+    <main className="w-full min-h-[120vh] flex dark:bg-slate-800">
+      <div className="grid grid-cols-1 md:grid-cols-2 m-auto px-6 py-5 h-[400px] sm:max-w-[850px] rounded-2xl dark:bg-slate-700 bg-white">
         <div className="w-full h-[450px] hidden md:block">
           <img className="w-full mt-4 ml-2 h-[380px]" src={log_img} alt="Forgot Password" />
         </div>
@@ -44,7 +44,7 @@ export default function ForgotPassword(): JSX.Element {
               />
             </div>
             <button
-              className="w-44 mt-7 ml-24 active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-3 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white poppins-extrabold"
+              className="w-44 mt-7 ml-[90px] active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-3 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white poppins-extrabold"
               key="1"
             >
               Update Password
