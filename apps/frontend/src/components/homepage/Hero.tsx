@@ -1,11 +1,20 @@
-import { HeroCard} from "./HeroCard"
-import { HeroCard2 } from "./HeroCard2"
-import { HeroCard3 } from "./HeroCard3"
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+import { HeroCard } from './HeroCard';
+import { HeroCard2 } from './HeroCard2';
+import { HeroCard3 } from './HeroCard3';
+
 const Hero = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <section className="pt-8 mt-[100px] lg:mt-0 lg:pt-32 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] dark:bg-slate-900 bg-center bg-cover">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative text-center">
-        <div className="border border-blue-600 p-1 w-60 mx-auto rounded-full flex items-center justify-between mb-4">
+        <div data-aos={'fade-up'} className="border border-blue-600 p-1 w-60 mx-auto rounded-full flex items-center justify-between mb-4">
           <span className="font-inter text-xs font-medium dark:text-white text-gray-900 ml-3"
           > Request Help</span>
           <a href="javascript:;" className="w-8 h-8 rounded-full flex justify-center items-center bg-blue-600">
@@ -17,15 +26,16 @@ const Hero = () => {
           </a>
         </div>
         <h1
+        data-aos={'fade-right'}
           className="max-w-3xl mx-auto text-center font-manrope dark:text-white font-bold text-4xl text-gray-900 mb-5 md:text-5xl leading-[50px]">
           {/* Control your Finances with our
             <span className="text-blue-600">Smart Tool </span> */}
 
 
-Join events, offer services, or get help securely with <span  className="text-blue-600">Unite.</span>
+          Join events, offer services, or get help securely with <span className="text-blue-600">Unite.</span>
         </h1>
-        <p className="max-w-sm mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-9">
-        Join our platform effortlessly and start making a difference in your community today. 
+        <p data-aos={'fade-left'} className="max-w-sm mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-9">
+          Join our platform effortlessly and start making a difference in your community today.
         </p>
         <a href="javascript:;"
           className="w-full md:w-auto mb-14 inline-flex items-center justify-center py-3 px-7 text-base font-semibold text-center text-white rounded-full bg-blue-600 shadow-xs hover:bg-blue-700 transition-all duration-500">
@@ -36,12 +46,15 @@ Join events, offer services, or get help securely with <span  className="text-bl
               stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </a>
-        <div className="flex justify-center items-center gap-[-10] lg:gap-5 flex-col lg:flex-row ">
-         
+        <div data-aos={'fade-down'} className="flex justify-center items-center gap-[-10] lg:gap-5 flex-col lg:flex-row ">
 
-         <HeroCard/>
-         <HeroCard2/>
-         <HeroCard3/>
+
+          
+<HeroCard/>
+<HeroCard2/>
+
+<HeroCard3/>
+
 
 
         </div>
