@@ -2,9 +2,10 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { HeroCard } from './HeroCard';
-import { HeroCard2 } from './HeroCard2';
-import { HeroCard3 } from './HeroCard3';
+// import { HeroCard } from './cards/HeroCard';
+// import { HeroCard2 } from './cards/HeroCard2';
+// import { HeroCard3 } from './cards/HeroCard3';
+import CardsSection from './CardSection';
 
 const Hero = () => {
 
@@ -26,8 +27,8 @@ const Hero = () => {
           </a>
         </div>
         <h1
-        data-aos={'fade-right'}
-          className="max-w-3xl mx-auto text-center font-manrope dark:text-white font-bold text-4xl text-gray-900 mb-5 md:text-5xl leading-[50px]">
+          data-aos={'fade-right'}
+          className="max-w-7xl mx-auto text-center font-manrope dark:text-white font-bold text-4xl text-gray-900 mb-5 md:text-6xl leading-[50px]">
           {/* Control your Finances with our
             <span className="text-blue-600">Smart Tool </span> */}
 
@@ -46,15 +47,12 @@ const Hero = () => {
               stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </a>
-        <div data-aos={'fade-down'} className="flex justify-center items-center gap-[-10] lg:gap-5 flex-col lg:flex-row ">
+        <div  className="flex justify-center items-center gap-[-10] lg:gap-5 flex-col lg:flex-row ">
 
 
-          
-<HeroCard/>
-<HeroCard2/>
 
-<HeroCard3/>
 
+          <CardsSection />
 
 
         </div>

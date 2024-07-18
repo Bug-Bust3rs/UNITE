@@ -1,5 +1,5 @@
 
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { CardBody, CardContainer, CardItem } from "../../ui/3d-card";
 import img from '../../assets/sign_up.gif'
  
 export function HeroCard() {
