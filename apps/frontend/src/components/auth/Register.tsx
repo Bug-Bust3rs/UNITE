@@ -26,18 +26,18 @@ export default function Register(): JSX.Element {
   };
 
   return (
-    <main className="w-full min-h-[80vh] flex dark:bg-slate-800">
-      <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[520px] sm:max-w-[900px] rounded-2xl dark:bg-slate-700 bg-white">
+    <main className="w-full min-h-[110vh] flex dark:bg-slate-800">
+      <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[620px] sm:max-w-[900px] rounded-2xl dark:bg-slate-700 bg-white">
         <div className="w-full h-[450px] hidden md:block">
           <img
-            className="w-full mt-[100px] ml-2 h-[380px]"
+            className="w-full mt-[130px] ml-2 h-[380px]"
             src={reg_img}
             alt="Register illustration"
           />
         </div>
         <div className="p-4 flex flex-col justify-around">
           <form onSubmit={handleClick}>
-            <h2 className="text-4xl font-medium text-center mb-8 mr-10">
+            <h2 className="text-4xl font-medium text-center mb-8 mr-14 dark:text-white">
               Create <span className="text-blue-600">Account</span>
             </h2>
             <div className="mt-3">
