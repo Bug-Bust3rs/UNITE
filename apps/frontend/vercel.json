@@ -24,7 +24,12 @@
       }
       ,
       {
-        "src": "/otp",
+        "src": "/otp/*",
+        "dest": "/"
+      }
+      ,
+      {
+        "src": "/contact",
         "dest": "/"
       }
     ]
