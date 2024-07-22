@@ -8,6 +8,7 @@ import ForgotPassword from "./components/auth/Forgot-Password";
 import OTP from "./components/auth/OTP";
 import { ThemeProvider } from "./context/ThemeCOntext";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
           <Route path="/profile" element={<ProfileSetup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/otp" element={<OTP />} />
-
+          <Route path="/contact" element={<Contact/>} />
 
         </Routes>
       </ThemeProvider>
