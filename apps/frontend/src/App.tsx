@@ -7,25 +7,28 @@ import Register from "./components/auth/Register";
 import ForgotPassword from "./components/auth/Forgot-Password";
 import OTP from "./components/auth/OTP";
 import { ThemeProvider } from "./context/ThemeCOntext";
+import { AuthContextProvider } from "./context/AuthContext";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 
 function App() {
   return (
     <>
-      <ThemeProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<ProfileSetup />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/otp" element={<OTP />} />
-          <Route path="/contact" element={<Contact/>}/>
-        </Routes>
-      </ThemeProvider>
-      <Footer />
+      <AuthContextProvider>
+        <ThemeProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<ProfileSetup />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/otp" element={<OTP />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </ThemeProvider>
+        <Footer />
+      </AuthContextProvider>
     </>
   );
 }
