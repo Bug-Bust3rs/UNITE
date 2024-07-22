@@ -23,3 +23,21 @@ export interface Action {
 export interface AuthContextProviderProps {
   children: ReactNode;
 }
+
+
+export interface RegisterFormData {
+  name: string;
+  email: string;
+  password: string;
+  phone:string
+}
+export interface LoginFormData {
+  email: string;
+  password: string;
+}
+
+
+export interface LoginVerifyData{
+  email: string;
+  otp: string;
+}
