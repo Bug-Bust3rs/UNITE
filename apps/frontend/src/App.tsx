@@ -23,7 +23,6 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/otp" element={<OTP />} />
           <Route path="/contact" element={<Contact/>}/>
-
         </Routes>
       </ThemeProvider>
       <Footer />
