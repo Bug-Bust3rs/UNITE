@@ -1,16 +1,16 @@
 import { useState } from "react";
 import axios from "axios";
 import { RegisterFormData } from "../interfaces";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const useRegister = () => {
   const [error, setError] = useState<boolean>(false);
   const [isLoading, setisLoading] = useState<boolean>(false);
   const [isSucess, setisSucess] = useState<boolean>(false);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const register = async ({ name, email, password , phone}: RegisterFormData) => {
+  const register = async ({ name, email, password, phone }: RegisterFormData) => {
     setisLoading(true);
     setError(false);
     try {
@@ -23,9 +23,15 @@ export const useRegister = () => {
           phone
         }
       );
-      
+
       setisSucess(true);
       setisLoading(false);
+
+
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } catch (error) {
       console.error("Login error:", error);
       setError(true);

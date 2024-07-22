@@ -1,10 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { LoginFormData } from "../interfaces";
+import { useNavigate } from "react-router-dom";
 
 
 export const useLogin = () => {
-
+  const navigate = useNavigate();
   const [error, setError] = useState<boolean>(false);
   const [isLoading, setisLoading] = useState<boolean>(false);
   const [isSucess, setisSucess] = useState<boolean>(false);
@@ -23,6 +24,11 @@ export const useLogin = () => {
       setisSucess(true);
       setisLoading(false);
       
+
+
+      setTimeout(() => {
+        navigate(`/otp/${email}`);
+      }, 2000);
     } catch (error) {
       console.error("Login error:", error);
       setError(true);

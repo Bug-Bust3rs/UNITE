@@ -1,11 +1,5 @@
-import { createContext, useReducer, useEffect } from "react";
-
-import {
-  State,
-  Action,
-  AuthContextProviderProps,
-  User,
-} from "../interfaces";
+import React, { createContext, useReducer, useEffect } from "react";
+import { State, Action, AuthContextProviderProps, User } from "../interfaces";
 
 const initialState: State = {
   user: null,
@@ -29,11 +23,16 @@ export const authReducer = (state: State, action: Action): State => {
 
 export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
+
   useEffect(() => {
     const userString = localStorage.getItem("user");
     if (userString) {
-      const user: User = JSON.parse(userString);
-      dispatch({ type: "LOGIN", payload: user });
+      try {
+        const user: User = JSON.parse(userString);
+        dispatch({ type: "LOGIN", payload: user });
+      } catch (error) {
+        console.error("Failed to parse user from localStorage", error);
+      }
     }
   }, []);
 

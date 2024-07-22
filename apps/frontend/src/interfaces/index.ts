@@ -10,9 +10,8 @@ export interface User {
   success?: boolean;
   token?: string;
   email?: string;
-  role?: string;
   id?: string;
-  name?:string
+  name?: string;
 }
 
 export interface Action {
@@ -38,6 +37,6 @@ export interface LoginFormData {
 
 
 export interface LoginVerifyData{
-  email: string;
+  email?: string;
   otp: string;
 }
