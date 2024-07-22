@@ -92,7 +92,7 @@ export default function Login(): JSX.Element {
           )}
           {isSucess && (
             <div className="bg-green-200 text-green-500 p-5 rounded-lg mt-4">
-              Successfully logged in!
+              OTP sent to your Email!
             </div>
           )}
         </div>
