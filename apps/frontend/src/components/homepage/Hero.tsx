@@ -2,9 +2,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-// import { HeroCard } from './cards/HeroCard';
-// import { HeroCard2 } from './cards/HeroCard2';
-// import { HeroCard3 } from './cards/HeroCard3';
 import CardsSection from './CardSection';
 
 const Hero = () => {
@@ -29,10 +26,6 @@ const Hero = () => {
         <h1
           data-aos={'fade-right'}
           className="max-w-7xl mx-auto text-center font-manrope dark:text-white font-bold text-4xl text-gray-900 mb-5 md:text-6xl leading-[50px]">
-          {/* Control your Finances with our
-            <span className="text-blue-600">Smart Tool </span> */}
-
-
           Join events, offer services, or get help securely with <span className="text-blue-600">Unite.</span>
         </h1>
         <p data-aos={'fade-left'} className="max-w-sm mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-9">
@@ -47,7 +40,7 @@ const Hero = () => {
               stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </a>
-        <div  className="flex justify-center items-center gap-[-10] lg:gap-5 flex-col lg:flex-row ">
+        <div className="flex justify-center items-center gap-[-10] lg:gap-5 flex-col lg:flex-row ">
 
 
 

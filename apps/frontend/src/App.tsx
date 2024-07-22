@@ -10,27 +10,22 @@ import { ThemeProvider } from "./context/ThemeCOntext";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 
-
 function App() {
   return (
     <>
       <ThemeProvider>
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<ProfileSetup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/otp" element={<OTP />} />
-          <Route path="/contact" element={<Contact/>} />
-
+          <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </ThemeProvider>
-      <Footer/>
+      <Footer />
     </>
   );
 }
