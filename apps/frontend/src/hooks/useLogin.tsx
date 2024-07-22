@@ -13,7 +13,7 @@ export const useLogin = () => {
     setError(false);
     try {
       await axios.post(
-        `${import.meta.env.VITE_API}/api/auth/login`,
+        `${import.meta.env.VITE_API}/api/v0.1/auth/login`,
         {
           email,
           password,
