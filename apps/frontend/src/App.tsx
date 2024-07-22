@@ -9,27 +9,21 @@ import OTP from "./components/auth/OTP";
 import { ThemeProvider } from "./context/ThemeCOntext";
 import Footer from "./components/Footer";
 
-
 function App() {
   return (
     <>
       <ThemeProvider>
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<ProfileSetup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/otp" element={<OTP />} />
-
-
         </Routes>
       </ThemeProvider>
-      <Footer/>
+      <Footer />
     </>
   );
 }
