@@ -22,11 +22,8 @@ function App() {
           <Route path="/profile" element={<ProfileSetup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/otp" element={<OTP />} />
-<<<<<<< HEAD
-=======
-          <Route path="/contact" element={<Contact/>} />
+          <Route path="/contact" element={<Contact/>}/>
 
->>>>>>> 47881598f72b1cf19e534ba1f4b333a2e551fcfc
         </Routes>
       </ThemeProvider>
       <Footer />
