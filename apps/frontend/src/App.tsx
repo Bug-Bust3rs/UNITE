@@ -9,6 +9,8 @@ import OTP from "./components/auth/OTP";
 import { ThemeProvider } from "./context/ThemeCOntext";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
+import Feed from "./components/Feeds/Feed";
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/otp" element={<OTP />} />
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/feed" element ={<Feed/>}/>
         </Routes>
       </ThemeProvider>
       <Footer />
