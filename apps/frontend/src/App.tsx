@@ -5,6 +5,7 @@ import Login from "./components/auth/Login";
 import ProfileSetup from "./components/profile/ProfileSetup";
 import Register from "./components/auth/Register";
 import ForgotPassword from "./components/auth/Forgot-Password";
+import Feed from "./components/feed/Feed";
 import OTP from "./components/auth/OTP";
 import { ThemeProvider } from "./context/ThemeCOntext";
 
@@ -23,7 +24,8 @@ function App() {
         <ThemeProvider>
           <Navbar />
           <Routes>
-            <Route path="/" element={state.user ? <Home /> : <Navigate to="/login" />} />
+            <Route path="/" element={!state.user ? <Home /> : <Navigate to="/feeds" />} />
+            <Route path="/feeds" element={state.user ? <Feed/> : <Navigate to="/login" />} />
             <Route path="/login" element={!state.user ? <Login /> : <Navigate to="/" />} />
             <Route path="/register" element={!state.user ? <Register /> : <Navigate to="/" />} />
             <Route path="/profile" element={state.user ? <ProfileSetup /> : <Navigate to="/login" />} />
