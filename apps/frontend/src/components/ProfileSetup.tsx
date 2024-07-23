@@ -53,14 +53,14 @@ const ProfileSetup = () => {
         <div className="grid gap-8 grid-cols-1">
           <div className="flex flex-col">
             <div className="flex flex-col sm:flex-row items-center">
-              <h2 className="font-semibold text-lg mr-auto dark:text-white">Profile Setup</h2>
+              <h2 className="font-semibold text-4xl mr-auto dark:text-white">Profile </h2>
               <div className="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
             </div>
             <div className="mt-5">
               <form onSubmit={handleSubmit}>
                 <div className="md:space-y-2 mb-3">
-                  <label className="text-xs font-semibold text-gray-600 py-2 dark:text-gray-300">
-                    {state.user?.name}<abbr className="hidden" title="required">*</abbr>
+                  <label className="text-xl font-semibold text-gray-600 py-2 dark:text-gray-300">
+                     Hey, {state.user?.name}<abbr className="hidden" title="required">*</abbr>
                   </label>
                   <div className="flex items-center py-6">
                     <div className="w-12 h-12 mr-4 flex-none rounded-xl border overflow-hidden">
@@ -188,7 +188,7 @@ const ProfileSetup = () => {
                     type="submit"
                     className="mb-2 md:mb-0 bg-blue-400 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-white rounded-full hover:shadow-lg hover:bg-blue-500"
                   >
-                    Send
+                    Update
                   </button>
                 </div>
               </form>
