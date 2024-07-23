@@ -25,10 +25,10 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={!state.user ? <Home /> : <Navigate to="/feeds" />} />
-            <Route path="/feeds" element={state.user ? <Feed/> : <Navigate to="/login" />} />
-            <Route path="/login" element={!state.user ? <Login /> : <Navigate to="/" />} />
-            <Route path="/register" element={!state.user ? <Register /> : <Navigate to="/" />} />
-            <Route path="/profile" element={state.user ? <ProfileSetup /> : <Navigate to="/login" />} />
+            <Route path="/feeds" element={state.user ? <Feed/> : <Navigate to="/" />} />
+            <Route path="/login" element={!state.user ? <Login /> : <Navigate to="/feeds" />} />
+            <Route path="/register" element={!state.user ? <Register /> : <Navigate to="/feeds" />} />
+            <Route path="/profile" element={state.user ? <ProfileSetup /> : <Navigate to="/" />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/otp/:userId" element={<OTP />} />
             <Route path="/contact" element={state.user ? <Contact /> : <Navigate to="/login" />} />

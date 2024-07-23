@@ -1,9 +1,9 @@
-
+import AsideLeft from "./AsideLeft"
 
 const Feed = () => {
-  return (
-    <div>Feed</div>
-  )
+    return (
+        <div className="flex flex-row "><AsideLeft /></div>
+    )
 }
 
 export default Feed

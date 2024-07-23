@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../public/Unite__Logo.png'
+import logo from '/Unite__Logo.png'
 import { useTheme } from '../../context/ThemeCOntext';
 import { Moon, SunMoon } from 'lucide-react';
 import { useAuthContext } from "../../hooks/useAuthContext";
