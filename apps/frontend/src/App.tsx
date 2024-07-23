@@ -12,6 +12,7 @@ import { ThemeProvider } from "./context/ThemeCOntext";
 import Footer from "./components/ui/Footer";
 import Contact from "./components/ui/Contact";
 import { useAuthContext } from "./hooks/useAuthContext";
+import VerifiedPage from "./components/auth/VerifiedPage";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/otp/:userId" element={<OTP />} />
             <Route path="/contact" element={state.user ? <Contact /> : <Navigate to="/login" />} />
+            <Route path="/verified-mail" element={<VerifiedPage/>} />
           </Routes>
         </ThemeProvider>
         <Footer />
