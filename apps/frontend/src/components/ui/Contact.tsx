@@ -1,5 +1,5 @@
 import { useState } from "react";
-import req_img from "../assets/contact-us-animate (1).svg";
+import req_img from "../../assets/contact-us-animate (1).svg";
 
 
 export default function Contact(): JSX.Element {

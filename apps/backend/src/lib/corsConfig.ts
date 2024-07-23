@@ -1,5 +1,5 @@
 import { CorsOptions } from "cors";
-const whitelist = ["http://localhost:5173","https://caree.vercel.app"];
+const whitelist = ["http://localhost:5173","https://www.myhackathon.xyz"];
 
 const corsOptions: CorsOptions = {
   origin: function (origin, callback) {

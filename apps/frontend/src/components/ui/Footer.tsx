@@ -1,5 +1,5 @@
 
-import logo from "../assets/Unite__Logo.png";
+import logo from "../../assets/Unite__Logo.png";
 import { Link } from "react-router-dom";
 function Footer() {
   return (
