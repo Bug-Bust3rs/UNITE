@@ -1,10 +1,10 @@
-import logo from '../../assets/forgot-password-animate.svg'
+import logo from '../../assets/support.gif'
 
 const MainFeed = () => {
     return (
         <div className=''>
 
-            <div className="bg-white lg:p-8 shadow-md rounded-lg">
+            <div className="bg-white p-5 lg:p-8 shadow-md rounded-lg">
 
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-2">
@@ -33,7 +33,7 @@ const MainFeed = () => {
                 </div>
 
                 <div className="mb-4">
-                    <img src={logo} alt="Post Image" className="w-full h-48 object-cover rounded-md" />
+                    <img src={'https://imgs.search.brave.com/ghK3CGoQlTkudwqZ9DgqiL3aaY-K5r6LVk2Q-gy6RCY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/dHJhdmVsdHJpYW5n/bGUuY29tL2Jsb2cv/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvS2VyYWxhLTIx/LmpwZw'} alt="Post Image" className="w-full h-auto object-cover rounded-md" />
                 </div>
 
                 <div className="flex items-center justify-between text-gray-500">
