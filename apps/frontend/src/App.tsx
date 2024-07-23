@@ -1,15 +1,15 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "./components/homepage/Home";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/ui/Navbar";
 import Login from "./components/auth/Login";
-import ProfileSetup from "./components/ProfileSetup";
+import ProfileSetup from "./components/profile/ProfileSetup";
 import Register from "./components/auth/Register";
 import ForgotPassword from "./components/auth/Forgot-Password";
 import OTP from "./components/auth/OTP";
 import { ThemeProvider } from "./context/ThemeCOntext";
 
-import Footer from "./components/Footer";
-import Contact from "./components/Contact";
+import Footer from "./components/ui/Footer";
+import Contact from "./components/ui/Contact";
 import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {

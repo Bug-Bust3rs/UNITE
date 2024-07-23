@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../public/Unite__Logo.png'
-import { useTheme } from '../context/ThemeCOntext';
+import { useTheme } from '../../context/ThemeCOntext';
 import { Moon, SunMoon } from 'lucide-react';
-import { useAuthContext } from "../hooks/useAuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme()
