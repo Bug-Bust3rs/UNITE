@@ -74,15 +74,15 @@ export default function OTP() {
 
               onClick={handleVerify}
               disabled={isLoading}
-              className="ml-[110px] flex flex-row items-center justify-center text-center w-[200px] border rounded-3xl hover:bg-cyan-400 outline-none py-3 bg-cyan-500 border-none text-white shadow-sm text-base font-semibold poppins-extrabold"
+              className=" flex flex-row items-center justify-center text-center w-full border rounded-3xlactive:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold"
 
             >
              {isLoading ?<p>Verifying..</p>:  <p>Verify Account</p>}
             </button>
           </div>
-          <div className="mt-7">
+          <div className="mt-5">
             <button
-              className=" flex flex-row items-center justify-center text-center w-full border rounded-3xl py-3 bg-white border-black text-black shadow-sm text-base font-semibold poppins-extrabold"
+              className=" flex flex-row items-center justify-center text-center w-full border rounded-3xl py-3 bg-white border-black text-black shadow-sm text-base font-semibold"
             >
               <p>Resend OTP</p>
             </button>
