@@ -37,7 +37,7 @@ const ProfileSetup = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission
+
     console.log(formData);
   };
 
