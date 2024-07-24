@@ -1,35 +1,38 @@
 import { useAuthContext } from "../../hooks/useAuthContext";
-import Avatar  from "react-avatar";
+import Avatar from "react-avatar";
 import { getRandomHexColor } from "../../lib/utils";
+
 const AsideLeft = () => {
     const { state } = useAuthContext();
 
     return (
         <div className="pt-8 lg:pt-20 block lg:fixed left-[15%] top-0">
-            <div className="my-10">
-                <div className="bg-white rounded overflow-hidden shadow-lg">
-                    <div className="text-center p-6  border-b">
-                        {state.user?.image ? <img
-                            className="h-24 w-24 rounded-full mx-auto"
-                            src="https://randomuser.me/api/portraits/men/24.jpg"
-                            alt="Randy Robertson"
-                        /> :
-                        
-                            <Avatar color={getRandomHexColor()} name={state.user?.name} round={true} />}
-                        <p className="pt-2 text-lg font-semibold">{state.user?.name}</p>
-                        <p className="text-sm text-gray-600">{state.user?.email}</p>
+            <div className="my-10 w-[90%] lg:w-auto mx-auto">
+                <div className="bg-white dark:bg-slate-800 overflow-hidden shadow-lg p-4 rounded-xl">
+                    <div className="text-center p-6 border-b dark:border-slate-700">
+                        {state.user?.image ? (
+                            <img
+                                className="h-24 w-24 rounded-full mx-auto"
+                                src="https://randomuser.me/api/portraits/men/24.jpg"
+                                alt="Randy Robertson"
+                            />
+                        ) : (
+                            <Avatar color={getRandomHexColor()} name={state.user?.name} round={true} />
+                        )}
+                        <p className="pt-2 text-lg font-semibold dark:text-white">{state.user?.name}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{state.user?.email}</p>
                         <div className="mt-5">
                             <a
                                 href="#"
-                                className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-700"
+                                className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-700 dark:text-gray-300 dark:border-gray-600"
                             >
                                 Manage your Account
                             </a>
                         </div>
                     </div>
-                    <div className="border-b hidden lg:block">
-                        <a href="#" className="px-4 py-2 hover:bg-gray-100 flex">
-                            <div className="text-gray-800">
+                    <div className="border-b hidden lg:block dark:border-slate-700">
+                        <a href="#" className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-700 flex">
+                            <div className="text-gray-800 dark:text-gray-300">
                                 <svg
                                     fill="none"
                                     stroke="currentColor"
@@ -43,12 +46,12 @@ const AsideLeft = () => {
                                 </svg>
                             </div>
                             <div className="pl-3">
-                                <p className="text-sm font-medium text-gray-800 leading-none">Add members</p>
-                                <p className="text-xs text-gray-500">Add/manage users &amp; teams</p>
+                                <p className="text-sm font-medium text-gray-800 dark:text-gray-300 leading-none">Add members</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">Add/manage users &amp; teams</p>
                             </div>
                         </a>
-                        <a href="#" className="px-4 py-2 hover:bg-gray-100 flex">
-                            <div className="text-gray-800">
+                        <a href="#" className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-700 flex">
+                            <div className="text-gray-800 dark:text-gray-300">
                                 <svg
                                     fill="none"
                                     stroke="currentColor"
@@ -63,12 +66,12 @@ const AsideLeft = () => {
                                 </svg>
                             </div>
                             <div className="pl-3">
-                                <p className="text-sm font-medium text-gray-800 leading-none">Account settings</p>
-                                <p className="text-xs text-gray-500">Usage, billing, branding, teams</p>
+                                <p className="text-sm font-medium text-gray-800 dark:text-gray-300 leading-none">Account settings</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">Usage, billing, branding, teams</p>
                             </div>
                         </a>
-                        <a href="#" className="px-4 py-2 hover:bg-gray-100 flex">
-                            <div className="text-gray-800">
+                        <a href="#" className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-700 flex">
+                            <div className="text-gray-800 dark:text-gray-300">
                                 <svg
                                     fill="none"
                                     stroke="currentColor"
@@ -82,12 +85,12 @@ const AsideLeft = () => {
                                 </svg>
                             </div>
                             <div className="pl-3">
-                                <p className="text-sm font-medium text-gray-800 leading-none">Personal settings</p>
-                                <p className="text-xs text-gray-500">Email, profile, notifications</p>
+                                <p className="text-sm font-medium text-gray-800 dark:text-gray-300 leading-none">Personal settings</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">Email, profile, notifications</p>
                             </div>
                         </a>
-                        <a href="#" className="px-4 py-2 hover:bg-gray-100 flex">
-                            <div className="text-green-600">
+                        <a href="#" className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-700 flex">
+                            <div className="text-green-600 dark:text-green-400">
                                 <svg
                                     fill="none"
                                     stroke="currentColor"
@@ -101,33 +104,29 @@ const AsideLeft = () => {
                                 </svg>
                             </div>
                             <div className="pl-3">
-                                <p className="text-sm font-medium text-gray-800 leading-none">
+                                <p className="text-sm font-medium text-gray-800 dark:text-gray-300 leading-none">
                                     Apps &amp; integrations
                                 </p>
-                                <p className="text-xs text-gray-500">Google, slack, mail</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">Google, slack, mail</p>
                             </div>
                         </a>
                     </div>
 
                     <div className="hidden lg:block">
-                        <a href="#" className="px-4 py-2 pb-4 hover:bg-gray-100 flex">
-                            <p className="text-sm font-medium text-gray-800 leading-none">Product updates</p>
+                        <a href="#" className="px-4 py-2 pb-4 hover:bg-gray-100 dark:hover:bg-slate-700 flex">
+                            <p className="text-sm font-medium text-gray-800 dark:text-gray-300 leading-none">Product updates</p>
                         </a>
-                        <a href="#" className="px-4 py-2 pb-4 hover:bg-gray-100 flex">
-                            <p className="text-sm font-medium text-gray-800 leading-none">Status updates</p>
+                        <a href="#" className="px-4 py-2 pb-4 hover:bg-gray-100 dark:hover:bg-slate-700 flex">
+                            <p className="text-sm font-medium text-gray-800 dark:text-gray-300 leading-none">Status updates</p>
                         </a>
-                        <a href="#" className="px-4 py-2 pb-4 hover:bg-gray-100 flex">
-                            <p className="text-sm font-medium text-gray-800 leading-none">Support FAQ</p>
-                        </a>
-                        <a href="#" className="px-4 py-2 pb-4 hover:bg-gray-100 flex">
-                            <p className="text-sm font-medium text-gray-800 leading-none">Logout</p>
+                        <a href="#" className="px-4 py-2 pb-4 hover:bg-gray-100 dark:hover:bg-slate-700 flex">
+                            <p className="text-sm font-medium text-gray-800 dark:text-gray-300 leading-none">Help center</p>
                         </a>
                     </div>
                 </div>
             </div>
-
         </div>
-    )
-}
+    );
+};
 
-export default AsideLeft
+export default AsideLeft;

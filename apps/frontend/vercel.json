@@ -32,5 +32,10 @@
         "src": "/contact",
         "dest": "/"
       }
+      ,
+      {
+        "src": "/feeds",
+        "dest": "/"
+      }
     ]
   }
