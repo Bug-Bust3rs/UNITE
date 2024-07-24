@@ -11,6 +11,19 @@ export const getUser = async (req: Request, res: Response) => {
 
 
 
+export const getUserData = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    try {
+      const profile = await prisma.user.findUnique({ where: { id } });
+      if (!profile) {
+        return res.status(404).json({ error: "User not found" });
+      }
+      res.status(200).json(profile);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch profile" });
+    }
+  };
+
 // update the user
 export const updateUser = async (req: Request, res: Response) => {
     const userId = req.params.id;

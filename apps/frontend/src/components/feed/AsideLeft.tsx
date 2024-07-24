@@ -1,19 +1,55 @@
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Avatar from "react-avatar";
 import { getRandomHexColor } from "../../lib/utils";
+import { useState, useEffect } from 'react'
+import ProfileLoder from "./ProfileLoder";
+
+import axios from 'axios';
+
+interface UserProfile {
+    image: string | null;
+}
 
 const AsideLeft = () => {
     const { state } = useAuthContext();
+    const userId = state.user?.id || 'id';
+    const [imageUrl, setImageUrl] = useState<string | null>(null);
 
+    const [loading, setLoading] = useState<boolean>(false);
+
+    const fetchProfile = async () => {
+        setLoading(true); 
+        try {
+            const response = await axios.get(`${import.meta.env.VITE_API}/api/v0.1/user/${userId}`);
+            console.log(response.data);
+            
+            setImageUrl(response.data.image);
+        } catch (error) {
+            console.error('Error fetching profile:', error);
+        }finally {
+            setLoading(false); 
+          }
+    };
+    useEffect(() => {
+        if (userId) {
+            fetchProfile();
+        }
+    }, [userId]);
     return (
         <div className="pt-8 lg:pt-20 block lg:fixed left-[15%] top-0">
             <div className="my-10 w-[90%] lg:w-auto mx-auto">
                 <div className="bg-white dark:bg-slate-800 overflow-hidden shadow-lg p-4 rounded-xl">
                     <div className="text-center p-6 border-b dark:border-slate-700">
-                        {state.user?.image ? (
+
+                        {
+                            loading ? <ProfileLoder/> : <>
+                            
+                            
+                            
+                            {imageUrl? (
                             <img
                                 className="h-24 w-24 rounded-full mx-auto"
-                                src="https://randomuser.me/api/portraits/men/24.jpg"
+                                src={imageUrl}
                                 alt="Randy Robertson"
                             />
                         ) : (
@@ -28,7 +64,10 @@ const AsideLeft = () => {
                             >
                                 Manage your Account
                             </a>
-                        </div>
+                        </div></>
+
+                        }
+                        
                     </div>
                     <div className="border-b hidden lg:block dark:border-slate-700">
                         <a href="#" className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-700 flex">

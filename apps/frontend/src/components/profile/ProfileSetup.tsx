@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { useAuthContext } from "../../hooks/useAuthContext";
+import axios from 'axios';
 interface FormData {
   cName?: string;
   companyMail?: string;
@@ -35,10 +36,28 @@ const ProfileSetup = () => {
     setFormData({ ...formData, logo: file });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = new FormData();
+    const id = state.user?.id || "id";
+    form.append('userId', id);
+    form.append('service', formData.location);
+    form.append('address', formData.companyAddress);
+    form.append('description', formData.description);
+    if (formData.logo) {
+      form.append('file', formData.logo);
+    }
 
-    console.log(formData);
+    try {
+      const response = await axios.post(   `${import.meta.env.VITE_API}/api/v0.1/profiles`, form, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log('Profile created:', response.data);
+    } catch (error) {
+      console.error('Error creating profile:', error);
+    }
   };
 
   return (
@@ -166,7 +185,7 @@ const ProfileSetup = () => {
                       onChange={handleInputChange}
                     >
                       <option value="USER">USER</option>
-                      <option value="CHARITY ">CHARITY </option>
+                      <option value="CHARITY ">CHARITY</option>
                       <option value="ELECTRICIAN">ELECTRICIAN</option>
                       <option value="PLUMBER">PLUMBER</option>
                       <option value="CARPENTER">CARPENTER</option>

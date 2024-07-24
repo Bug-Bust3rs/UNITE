@@ -6,12 +6,13 @@ import {
   updateProfile,
   deleteProfile,
 } from "../controllers/profileController";
+import fileUpload from "../lib/fileUpload";
 
 const router = express.Router();
 
 router.get("/", getProfiles);
 router.get("/:id", getProfile);
-router.post("/", createProfile);
+router.post("/", fileUpload ,createProfile);
 router.put("/:id", updateProfile);
 router.delete("/:id", deleteProfile);
 
