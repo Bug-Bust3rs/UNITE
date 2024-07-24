@@ -13,7 +13,7 @@ const AsideLeft = () => {
                         {state.user?.image ? (
                             <img
                                 className="h-24 w-24 rounded-full mx-auto"
-                                src="https://randomuser.me/api/portraits/men/24.jpg"
+                                src={state.user.image}
                                 alt="Randy Robertson"
                             />
                         ) : (
