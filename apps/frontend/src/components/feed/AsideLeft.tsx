@@ -1,16 +1,21 @@
 import { useAuthContext } from "../../hooks/useAuthContext";
+import Avatar  from "react-avatar";
+import { getRandomHexColor } from "../../lib/utils";
 const AsideLeft = () => {
-    const {state} = useAuthContext()
+    const { state } = useAuthContext();
+
     return (
         <div className="pt-8 lg:pt-20 block lg:fixed left-[15%] top-0">
             <div className="my-10">
                 <div className="bg-white rounded overflow-hidden shadow-lg">
                     <div className="text-center p-6  border-b">
-                        <img
+                        {state.user?.image ? <img
                             className="h-24 w-24 rounded-full mx-auto"
                             src="https://randomuser.me/api/portraits/men/24.jpg"
                             alt="Randy Robertson"
-                        />
+                        /> :
+                        
+                            <Avatar color={getRandomHexColor()} name={state.user?.name} round={true} />}
                         <p className="pt-2 text-lg font-semibold">{state.user?.name}</p>
                         <p className="text-sm text-gray-600">{state.user?.email}</p>
                         <div className="mt-5">

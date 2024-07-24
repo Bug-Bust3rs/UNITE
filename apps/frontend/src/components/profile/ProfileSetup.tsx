@@ -10,6 +10,7 @@ interface FormData {
   logo: File | null;
 }
 
+
 const ProfileSetup = () => {
 
   const {state} = useAuthContext()
@@ -42,14 +43,14 @@ const ProfileSetup = () => {
 
   return (
     <div
-      className="relative min-h-screen flex items-center justify-center bg-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover dark:bg-gray-900"
+      className="relative min-h-screen flex items-center bg-center  justify-center  py-12 px-4 sm:px-6 lg:px-8 bg-no-repeat bg-cover dark:bg-gray-900"
       style={{
         backgroundImage:
-          'url(https://images.unsplash.com/photo-1532423622396-10a3f979251a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80)',
+          'url(https://pagedone.io/asset/uploads/1691055810.png)',
       }}
     >
-      <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
-      <div className="max-w-md w-full space-y-8 p-10 bg-white rounded-xl shadow-lg z-10 dark:bg-gray-800">
+      <div className="absolute  inset-0 z-0"></div>
+      <div className="lg:max-w-2xl max-w-md w-full space-y-8 p-10 bg-white rounded-xl shadow-lg z-10 dark:bg-gray-800">
         <div className="grid gap-8 grid-cols-1">
           <div className="flex flex-col">
             <div className="flex flex-col sm:flex-row items-center">
@@ -63,10 +64,10 @@ const ProfileSetup = () => {
                      Hey, {state.user?.name}<abbr className="hidden" title="required">*</abbr>
                   </label>
                   <div className="flex items-center py-6">
-                    <div className="w-12 h-12 mr-4 flex-none rounded-xl border overflow-hidden">
+                    <div className="w-20 h-20 mr-4 flex-none rounded-xl border overflow-hidden">
                       {formData.logo && (
                         <img
-                          className="w-12 h-12 mr-4 object-cover"
+                          className="w-[10rem] h-[10rem] mr-4 object-cover"
                           src={URL.createObjectURL(formData.logo)}
                           alt="Avatar Upload"
                         />
