@@ -43,7 +43,7 @@ const ProfileSetup = () => {
 
   return (
     <div
-      className="relative min-h-screen flex items-center bg-center  justify-center  py-12 px-4 sm:px-6 lg:px-8 bg-no-repeat bg-cover dark:bg-gray-900"
+      className="relative min-h-screen flex items-center bg-center  justify-center py-24 lg:py-12 px-4 sm:px-6 lg:px-8 bg-no-repeat bg-cover dark:bg-gray-900"
       style={{
         backgroundImage:
           'url(https://pagedone.io/asset/uploads/1691055810.png)',
@@ -54,7 +54,7 @@ const ProfileSetup = () => {
         <div className="grid gap-8 grid-cols-1">
           <div className="flex flex-col">
             <div className="flex flex-col sm:flex-row items-center">
-              <h2 className="font-semibold text-4xl mr-auto dark:text-white">Profile </h2>
+              <h2 className="font-semibold text-4xl mr-auto dark:text-white">Your Profile </h2>
               <div className="w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0"></div>
             </div>
             <div className="mt-5">
