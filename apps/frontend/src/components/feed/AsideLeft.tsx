@@ -6,9 +6,7 @@ import ProfileLoder from "./ProfileLoder";
 
 import axios from 'axios';
 
-interface UserProfile {
-    image: string | null;
-}
+
 
 const AsideLeft = () => {
     const { state } = useAuthContext();
