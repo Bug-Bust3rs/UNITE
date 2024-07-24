@@ -2,7 +2,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 const AsideLeft = () => {
     const {state} = useAuthContext()
     return (
-        <div className="pt-8 lg:pt-20 block lg:fixed left-[15%] top-0 start-0">
+        <div className="pt-8 lg:pt-20 block lg:fixed left-[15%] top-0">
             <div className="my-10">
                 <div className="bg-white rounded overflow-hidden shadow-lg">
                     <div className="text-center p-6  border-b">
