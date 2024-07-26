@@ -2,14 +2,15 @@ const OfferReqForm= () => {
 
     return (
       <div>
-        <div className=" w-full h-[500px] p-10 bg-slate-100  z-10 dark:bg-slate-800">
+        <h2 className="mt-5 ml-[210px] text-3xl font-semibold">New Offer<span className="text-blue-500" > Request</span></h2>
+        <div className="justify-center items-center w-[700px] h-[480px] p-10 bg-slate-100  dark:bg-slate-800 mt-5 mb-14 shadow-lg rounded-2xl hover:scale-[1.05]">
           <div className="grid gap-8 grid-cols-1">
             <div className="flex flex-col">
               <div className="mt-2">
                 <form>
                   <div className="md:flex md:flex-row md:space-x-4 w-full text-xs">
                   <div className="w-full flex flex-col mb-3">
-                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300">
+                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300  ml-2">
                         Your Role<abbr title="required"/>*
                       </label>
                       <select
@@ -24,7 +25,7 @@ const OfferReqForm= () => {
                       </select>
                     </div> 
                     <div className="w-full flex flex-col mb-3">
-                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300">
+                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300 ml-2">
                         Category<abbr title="required"/>*
                       </label>
                       <select
@@ -40,7 +41,7 @@ const OfferReqForm= () => {
                       </select>
                     </div>
                     <div className="w-full flex flex-col mb-3">
-                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300">
+                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300 ml-2">
                         Cost<abbr title="required"/>*
                       </label>
                       <select
@@ -55,7 +56,7 @@ const OfferReqForm= () => {
                       </select>
                     </div> 
                     <div className="w-full flex flex-col mb-3">
-                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300">
+                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300 ml-2">
                         Your Role<abbr title="required"/>*
                       </label>
                       <select
@@ -72,7 +73,7 @@ const OfferReqForm= () => {
                   </div>
                   <div className="text-xs">
                   <div className="w-full flex flex-col mb-3">
-                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300">
+                      <label className="font-semibold text-gray-600 py-2 dark:text-gray-300 ml-2">
                         Upload Your Post
                       </label>
                   </div>
@@ -90,7 +91,7 @@ const OfferReqForm= () => {
                     </div>
                  </div>
                   <div className="flex-auto w-full mt-3 mb-1 text-xs space-y-2">
-                    <label className="font-semibold text-gray-600 py-2 dark:text-gray-300">Offer Description</label>
+                    <label className="font-semibold text-gray-600 py-2 dark:text-gray-300 ml-2">Offer Description</label>
                     <textarea
                       required
                       name="description"
@@ -101,9 +102,9 @@ const OfferReqForm= () => {
                   <div className="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">
                     <button
                       type="submit"
-                      className="mt-5 mr-[140px] justify-center text-center w-[150px] border rounded-3xl active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-1 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold"
+                      className="mt-5 mr-[245px] justify-center text-center w-[150px] border rounded-3xl active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold"
                     >
-                      Submit
+                      Request →
                     </button>
                   </div>
                 </form>
