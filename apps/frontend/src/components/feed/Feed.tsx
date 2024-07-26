@@ -8,7 +8,7 @@ const Feed = () => {
 
             <AsideLeft />
             
-            <main className="w-[90%] flex flex-col gap-10 lg:w-[50%]  mx-auto   ">
+            <main className="w-[90%] flex flex-col gap-10 lg:w-[50%]  mx-auto xl:ml-[27rem] 2xl:mr-auto ">
                 <MainFeed />
                 <MainFeed />
 
@@ -21,6 +21,7 @@ const Feed = () => {
 
 
             </main>
+       
            
             </div>
       
