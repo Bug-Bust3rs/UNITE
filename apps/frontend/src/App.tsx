@@ -33,7 +33,7 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/otp/:userId" element={<OTP />} />
             <Route path="/contact" element={state.user ? <Contact /> : <Navigate to="/login" />} />
-            <Route path="/verified-mail" element={<VerifiedPage/>} />
+            <Route path="/verify-email/:userId" element={<VerifiedPage/>} />
             <Route path="/offer-request" element={<Offer/>} />
           </Routes>
         </ThemeProvider>
