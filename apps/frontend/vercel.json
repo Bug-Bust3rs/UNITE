@@ -36,6 +36,13 @@
       {
         "src": "/feeds",
         "dest": "/"
+    
+      }
+      ,
+      {
+        "src": "/verify-email/*",
+        "dest": "/"
+        
       }
     ]
   }
