@@ -25,7 +25,7 @@ export const sendEmail = async (userId: string) => {
       },
     });
 
-    const verificationLink = `${config.BACKEND_URL}/api/v0.1/auth/verify-email/${user.id}/?token=${token}`;
+    const verificationLink = `${config.FRONTENDURL}/verify-email/${user.id}/?token=${token}`;
     if (!user) throw new Error("User not found");
     console.log(user.email);
     const mailOptions = {
