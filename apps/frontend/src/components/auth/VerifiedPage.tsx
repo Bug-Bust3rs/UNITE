@@ -1,6 +1,8 @@
 import { Link, useLocation, useParams } from "react-router-dom";
 import verified from "../../assets/verified-animate.svg";
 import verify from '../../../public/verify1.png';
+import cross from '../../../public/cross.jpg'
+import crossed from '../../../public/fail_verify.jpg'
 import { useState, useEffect } from "react";
 import axios from "axios";
 import AuthLoder from "./AuthLoder";
@@ -46,7 +48,7 @@ export default function VerifiedPage() {
               <div className="flex gap-1 items-center">
                 Successfully verified! <img className="h-10 w-auto" src={verify} alt="Verify Badge" />
               </div>
-              <span className="text-blue-400">puskarroy300@gmail.com</span>
+             
             </div>
             <button className="mt-5 justify-center text-center w-[150px] border rounded-3xl active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold">
               <Link to="/login">Go to Login →</Link>
@@ -56,7 +58,21 @@ export default function VerifiedPage() {
           
         </div>
       )}
-      {!loading && !verifyEmail && <div>Verification failed or already verified.</div>}
+      {!loading && !verifyEmail && <div className="flex justify-center items-center flex-col-reverse  m-auto h-[680px] sm:max-w-[800px]">
+          <div className="p-4 flex flex-col items-center justify-center">
+            <div className="font-bold text-xl  lg:text-3xl">
+              <div className="flex gap-1 flex-col lg:flex-row items-center">
+              Verification failed or already verified <img className="h-12 w-auto" src={cross} alt="Verify Badge" />
+              </div>
+             
+            </div>
+            <button className="mt-5 justify-center text-center w-[150px] border rounded-3xl active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold">
+              <Link to="/login">Go to Login →</Link>
+            </button>
+          </div>
+          <img className="h-[250px]  lg:h-[400px]  " src={crossed} alt="Verified" />
+          
+        </div>}
     </div>
   );
 }
