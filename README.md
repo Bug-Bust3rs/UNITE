@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Bug-Bust3rs/UNITE">
-    <img src="./docs/Unite__Logo.png" alt="Logo" width="170" height="170">
+    <img src="./docs/Unite_logo.png" alt="Logo" width="170" height="170">
     
   </a>
 
