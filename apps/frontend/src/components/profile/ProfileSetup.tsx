@@ -54,7 +54,7 @@ const ProfileSetup = () => {
     }
 
     try {
-      const response = await axios.post(   `${import.meta.env.VITE_API}/api/v0.1/profiles`, form, {
+      await axios.post(   `${import.meta.env.VITE_API}/api/v0.1/profiles`, form, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -142,7 +142,7 @@ const ProfileSetup = () => {
                   <label className="font-semibold text-gray-600 py-2 dark:text-gray-300">Your Any Social</label>
                   <div className="flex flex-wrap items-stretch w-full mb-4 relative">
                     <div className="flex">
-                      <span className="flex items-center leading-normal bg-grey-lighter border-1 rounded-r-none border border-r-0 border-blue-300 px-3 whitespace-no-wrap text-grey-dark text-sm w-12 h-10 bg-blue-300 justify-center items-center text-xl rounded-lg text-white">
+                      <span className="flex items-center leading-normal bg-grey-lighter border-1 rounded-r-none border border-r-0 border-blue-300 px-3 whitespace-no-wrap text-grey-dark text-sm w-12 h-10 bg-blue-300 justify-center text-xl rounded-lg text-white">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-6 w-6"

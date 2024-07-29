@@ -2,12 +2,13 @@ import { useState, useRef } from 'react';
 import log_img from '../../assets/enter-otp-animate.svg';
 import { useVerifyLogin } from '../../hooks/useLoginVerify';
 import { useParams } from 'react-router-dom';
+import { useToast } from '../ui/use-toast';
 
 export default function OTP() {
   const { verify, error, isLoading, isSucess } = useVerifyLogin();
   const [otp, setOtp] = useState<string[]>(Array(6).fill(""));
   let { userId } = useParams();
-
+  const {toast} = useToast();
   
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
@@ -32,10 +33,10 @@ export default function OTP() {
   };
 
   const handleVerify = async () => {
-    // Your verification logic here
-    console.log('OTP:', otp.join(''));
+  
     const verifydata = { email:userId, otp: otp.join('') };
     await verify(verifydata);
+    toast({ description: 'Login successfully!' ,  title : "OTP Verifyed !" } ,);
   };
 
   return (
