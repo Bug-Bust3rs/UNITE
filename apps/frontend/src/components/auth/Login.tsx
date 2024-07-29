@@ -2,12 +2,13 @@ import { useState } from "react";
 import log_img from "../../assets/login-animate.svg";
 import { Link } from "react-router-dom";
 import { useLogin } from "../../hooks/useLogin";
+import { useToast } from '../ui/use-toast';
 
 export default function Login(): JSX.Element {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const { login, error, isLoading, isSucess } = useLogin();
-
+  const {toast} = useToast();
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
@@ -23,6 +24,7 @@ export default function Login(): JSX.Element {
       password,
     };
     await login(loginData);
+    toast({ description: 'OTP created successfully!' ,  title : "Verify Your OTP !" } ,);
   };
 
   return (

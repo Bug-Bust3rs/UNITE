@@ -152,6 +152,7 @@ export const verifyOTP = async (req: Request, res: Response) => {
     email: user.email,
     id: user.id,
     name: user.name,
-    image: user.image
+    image: user.image,
+    isProfileComplete : user.isProfileComplete
   });
 };

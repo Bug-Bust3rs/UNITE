@@ -3,6 +3,7 @@ import Avatar from "react-avatar";
 import { getRandomHexColor } from "../../lib/utils";
 import { useState, useEffect } from 'react'
 import ProfileLoder from "./ProfileLoder";
+import AuthLoder from "../auth/AuthLoder";
 
 import axios from 'axios';
 
@@ -12,27 +13,35 @@ const AsideLeft = () => {
     const { state } = useAuthContext();
     const userId = state.user?.id || 'id';
     const [imageUrl, setImageUrl] = useState<string | null>(null);
-
     const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
 
     const fetchProfile = async () => {
-        setLoading(true); 
+        setLoading(true);
+        setError(null);
         try {
             const response = await axios.get(`${import.meta.env.VITE_API}/api/v0.1/user/${userId}`);
             console.log(response.data);
-            
             setImageUrl(response.data.image);
         } catch (error) {
             console.error('Error fetching profile:', error);
-        }finally {
-            setLoading(false); 
-          }
+            setError('Failed to load profile');
+        } finally {
+            setLoading(false);
+        }
     };
+
     useEffect(() => {
         if (userId) {
             fetchProfile();
         }
     }, [userId]);
+
+    if (error) {
+        return <AuthLoder />
+    }
+
+
     return (
         <div className="pt-8 lg:pt-20 block lg:fixed left-[15%] top-0">
             <div className="my-10 w-[90%] lg:w-auto mx-auto">
@@ -40,32 +49,32 @@ const AsideLeft = () => {
                     <div className="text-center p-6 border-b dark:border-slate-700">
 
                         {
-                            loading ? <ProfileLoder/> : <>
-                            
-                            
-                            
-                            {imageUrl? (
-                            <img
-                                className="h-24 w-24 rounded-full mx-auto"
-                                src={imageUrl}
-                                alt="Randy Robertson"
-                            />
-                        ) : (
-                            <Avatar color={getRandomHexColor()} name={state.user?.name} round={true} />
-                        )}
-                        <p className="pt-2 text-lg font-semibold dark:text-white">{state.user?.name}</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{state.user?.email}</p>
-                        <div className="mt-5">
-                            <a
-                                href="#"
-                                className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-700 dark:text-gray-300 dark:border-gray-600"
-                            >
-                                Manage your Account
-                            </a>
-                        </div></>
+                            loading ? <ProfileLoder /> : <>
+
+
+
+                                {imageUrl ? (
+                                    <img
+                                        className="h-24 w-24 rounded-full mx-auto"
+                                        src={imageUrl}
+                                        alt="Randy Robertson"
+                                    />
+                                ) : (
+                                    <Avatar color={getRandomHexColor()} name={state.user?.name} round={true} />
+                                )}
+                                <p className="pt-2 text-lg font-semibold dark:text-white">{state.user?.name}</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">{state.user?.email}</p>
+                                <div className="mt-5">
+                                    <a
+                                        href="#"
+                                        className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-700 dark:text-gray-300 dark:border-gray-600"
+                                    >
+                                        Manage your Account
+                                    </a>
+                                </div></>
 
                         }
-                        
+
                     </div>
                     <div className="border-b hidden lg:block dark:border-slate-700">
                         <a href="#" className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-slate-700 flex">

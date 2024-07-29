@@ -77,7 +77,12 @@ export const createProfile = async (req: Request, res: Response) => {
 
       await prisma.user.update({
         where: { id: userId },
-        data: { image: uploadCloud.secure_url }
+        data: { image: uploadCloud.secure_url ,isProfileComplete : true }
+      });
+    }else{
+      await prisma.user.update({
+        where: { id: userId },
+        data: { isProfileComplete : true }
       });
     }
 
