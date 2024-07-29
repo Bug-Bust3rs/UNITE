@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { useToast } from '../ui/use-toast';
 import axios from 'axios';
 interface FormData {
   cName?: string;
@@ -15,6 +16,8 @@ interface FormData {
 const ProfileSetup = () => {
 
   const {state} = useAuthContext()
+
+  const [ loading , setLoading ] = useState<boolean>(false)
   
   const [formData, setFormData] = useState<FormData>({
     cName: state.user?.name,
@@ -25,6 +28,7 @@ const ProfileSetup = () => {
     description: '',
     logo: null,
   });
+  const {toast} = useToast();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -37,6 +41,7 @@ const ProfileSetup = () => {
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     e.preventDefault();
     const form = new FormData();
     const id = state.user?.id || "id";
@@ -54,9 +59,12 @@ const ProfileSetup = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log('Profile created:', response.data);
+      toast({ description: 'Profile created successfully!' ,  title : "Profile Set up !" } ,);
     } catch (error) {
       console.error('Error creating profile:', error);
+      toast({ description: 'Profile Set up Failed !' ,  title : "Profile Set up !" } ,);
+    }finally{
+      setLoading(false);
     }
   };
 
@@ -93,7 +101,7 @@ const ProfileSetup = () => {
                       )}
                     </div>
                     <label className="cursor-pointer">
-                      <span className="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-400 hover:bg-blue-500 hover:shadow-lg">
+                      <span className="focus:outline-none text-white text-sm py-2 px-4 rounded-full bg-blue-600 hover:bg-blue-700 hover:shadow-lg">
                         Upload
                       </span>
                       <input type="file" className="hidden" onChange={handleFileChange} />
@@ -205,10 +213,11 @@ const ProfileSetup = () => {
                 </div>
                 <div className="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">
                   <button
+                  
                     type="submit"
-                    className="mb-2 md:mb-0 bg-blue-400 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-white rounded-full hover:shadow-lg hover:bg-blue-500"
+                    className="mb-2 md:mb-0 bg-blue-600 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-white rounded-full hover:shadow-lg hover:bg-blue-500"
                   >
-                    Update
+                  { loading ? <p>Updating...</p> : <p>Update</p> }
                   </button>
                 </div>
               </form>

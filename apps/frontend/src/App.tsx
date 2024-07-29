@@ -8,7 +8,7 @@ import ForgotPassword from "./components/auth/Forgot-Password";
 import Feed from "./components/feed/Feed";
 import OTP from "./components/auth/OTP";
 import { ThemeProvider } from "./context/ThemeCOntext";
-
+import { Toaster } from "./components/ui/toaster";
 import Footer from "./components/ui/Footer";
 import Contact from "./components/ui/Contact";
 import { useAuthContext } from "./hooks/useAuthContext";
@@ -38,7 +38,7 @@ function App() {
           </Routes>
         </ThemeProvider>
         <Footer />
-      
+      <Toaster/>
     </>
   );
 }

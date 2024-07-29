@@ -12,22 +12,24 @@ const AsideLeft = () => {
     const { state } = useAuthContext();
     const userId = state.user?.id || 'id';
     const [imageUrl, setImageUrl] = useState<string | null>(null);
-
     const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
 
     const fetchProfile = async () => {
-        setLoading(true); 
+        setLoading(true);
+        setError(null);
         try {
             const response = await axios.get(`${import.meta.env.VITE_API}/api/v0.1/user/${userId}`);
             console.log(response.data);
-            
             setImageUrl(response.data.image);
         } catch (error) {
             console.error('Error fetching profile:', error);
-        }finally {
-            setLoading(false); 
-          }
+            setError('Failed to load profile');
+        } finally {
+            setLoading(false);
+        }
     };
+
     useEffect(() => {
         if (userId) {
             fetchProfile();
