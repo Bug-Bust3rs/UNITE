@@ -26,7 +26,7 @@ export const useVerifyLogin = () => {
       setisSucess(true);
 
       setTimeout(() => {
-        navigate(`/`);
+        navigate(`/profile`);
       }, 2000);
     } catch (error) {
       console.error("Verification error:", error);
