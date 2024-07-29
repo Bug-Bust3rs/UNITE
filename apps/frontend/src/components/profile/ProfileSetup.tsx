@@ -15,7 +15,7 @@ interface FormData {
 
 const ProfileSetup = () => {
 
-  const {state} = useAuthContext()
+  const {state , dispatch} = useAuthContext()
 
   const [ loading , setLoading ] = useState<boolean>(false)
   
@@ -60,6 +60,7 @@ const ProfileSetup = () => {
         },
       });
       toast({ description: 'Profile created successfully!' ,  title : "Profile Set up !" } ,);
+      dispatch({ type: 'UPDATE_PROFILE_STATUS', payload: true });
     } catch (error) {
       console.error('Error creating profile:', error);
       toast({ description: 'Profile Set up Failed !' ,  title : "Profile Set up !" } ,);

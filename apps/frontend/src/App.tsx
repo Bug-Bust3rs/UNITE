@@ -16,29 +16,28 @@ import VerifiedPage from "./components/auth/VerifiedPage";
 import Offer from "./components/offer request/Offer-request";
 
 function App() {
-
   const { state } = useAuthContext();
-  console.log(state);
-  
+  const isProfileComplete = state.user && state.user.isProfileComplete;
+
   return (
     <>
-        <ThemeProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={!state.user ? <Home /> : <Navigate to="/feeds" />} />
-            <Route path="/feeds" element={state.user ? <Feed/> : <Navigate to="/" />} />
-            <Route path="/login" element={!state.user ? <Login /> : <Navigate to="/feeds" />} />
-            <Route path="/register" element={!state.user ? <Register /> : <Navigate to="/feeds" />} />
-            <Route path="/profile" element={state.user ? <ProfileSetup /> : <Navigate to="/" />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/otp/:userId" element={<OTP />} />
-            <Route path="/contact" element={state.user ? <Contact /> : <Navigate to="/login" />} />
-            <Route path="/verify-email/:userId" element={<VerifiedPage/>} />
-            <Route path="/offer-request" element={<Offer/>} />
-          </Routes>
-        </ThemeProvider>
-        <Footer />
-      <Toaster/>
+      <ThemeProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={state.user ? (isProfileComplete ? <Navigate to="/feeds" /> : <Navigate to="/profile" />) : <Home />} />
+          <Route path="/login" element={!state.user ? <Login /> : <Navigate to="/feeds" />} />
+          <Route path="/register" element={!state.user ? <Register /> : <Navigate to="/feeds" />} />
+          <Route path="/profile" element={state.user && !isProfileComplete ? <ProfileSetup /> : <Navigate to="/" />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/otp/:userId" element={<OTP />} />
+          <Route path="/verify-email/:userId" element={<VerifiedPage />} />
+          <Route path="/feeds" element={isProfileComplete ? <Feed /> : <Navigate to="/profile" />} />
+          <Route path="/contact" element={isProfileComplete ? <Contact /> : <Navigate to="/profile" />} />
+          <Route path="/offer-request" element={isProfileComplete ? <Offer /> : <Navigate to="/profile" />} />
+        </Routes>
+      </ThemeProvider>
+      <Footer />
+      <Toaster />
     </>
   );
 }

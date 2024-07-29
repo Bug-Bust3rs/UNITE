@@ -15,9 +15,12 @@ CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "phone" INTEGER NOT NULL,
+    "phone" TEXT NOT NULL,
     "isVerified" BOOLEAN NOT NULL DEFAULT false,
+    "image" TEXT,
     "location" TEXT,
+    "password" TEXT NOT NULL,
+    "isProfileComplete" BOOLEAN NOT NULL DEFAULT false,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -29,6 +32,8 @@ CREATE TABLE "Profile" (
     "id" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
     "service" "Service" NOT NULL DEFAULT 'USER',
+    "description" TEXT,
+    "address" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -37,7 +42,7 @@ CREATE TABLE "Profile" (
 
 -- CreateTable
 CREATE TABLE "JobPost" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "jobType" "Service" NOT NULL DEFAULT 'USER',
@@ -53,7 +58,7 @@ CREATE TABLE "JobPost" (
 
 -- CreateTable
 CREATE TABLE "PetsPost" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "petType" "Pet" NOT NULL DEFAULT 'OTHERS',
     "petImage" TEXT,
     "authorId" TEXT NOT NULL,
@@ -68,7 +73,7 @@ CREATE TABLE "PetsPost" (
 
 -- CreateTable
 CREATE TABLE "DonationPosts" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "donationType" "Pet" NOT NULL DEFAULT 'OTHERS',
     "donationImage" TEXT,
     "authorId" TEXT NOT NULL,
@@ -83,7 +88,7 @@ CREATE TABLE "DonationPosts" (
 
 -- CreateTable
 CREATE TABLE "OTP" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "otp" TEXT NOT NULL,
     "authorId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
