@@ -14,6 +14,8 @@ import Contact from "./components/ui/Contact";
 import { useAuthContext } from "./hooks/useAuthContext";
 import VerifiedPage from "./components/auth/VerifiedPage";
 import Offer from "./components/offer request/Offer-request";
+import Hiring from "./components/hiring/Hired";
+
 
 function App() {
   const { state } = useAuthContext();
@@ -34,6 +36,7 @@ function App() {
           <Route path="/feeds" element={isProfileComplete ? <Feed /> : <Navigate to="/profile" />} />
           <Route path="/contact" element={isProfileComplete ? <Contact /> : <Navigate to="/profile" />} />
           <Route path="/offer-request" element={isProfileComplete ? <Offer /> : <Navigate to="/profile" />} />
+          <Route path="/hiring" element={<Hiring/>} />
         </Routes>
       </ThemeProvider>
       <Footer />
