@@ -4,6 +4,7 @@ import logo from '/Unite__Logo.png'
 import { useTheme } from '../../context/ThemeCOntext';
 import { Moon, SunMoon } from 'lucide-react';
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { useLogout } from '../../hooks/useLogout';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme()
@@ -11,6 +12,12 @@ const Navbar: React.FC = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+  const { logout } = useLogout();
+
+  const handleLogout = () => {
+    logout();
+    
   };
 
   return (
@@ -22,7 +29,7 @@ const Navbar: React.FC = () => {
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
-          {state.user ? <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><Link to={'/logout'}>Log out</Link> </button> : <Link to={'/login'}> <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign In</button></Link>}
+          {state.user ? <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer" onClick={handleLogout}>Log out</button> : <Link to={'/login'}> <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign In</button></Link>}
           <button
             onClick={toggleMenu}
             data-collapse-toggle="navbar-sticky"
