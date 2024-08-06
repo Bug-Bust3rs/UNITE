@@ -35,8 +35,8 @@ function App() {
           <Route path="/verify-email/:userId" element={<VerifiedPage />} />
           <Route path="/feeds" element={isProfileComplete ? <Feed /> : <Navigate to="/profile" />} />
           <Route path="/contact" element={isProfileComplete ? <Contact /> : <Navigate to="/profile" />} />
-          <Route path="/offer-request" element={isProfileComplete ? <Offer /> : <Navigate to="/profile" />} />
-          <Route path="/hiring" element={<Hiring/>} />
+          <Route path="/offer-support" element={isProfileComplete ? <Offer /> : <Navigate to="/profile" />} />
+          <Route path="/hiring" element= {isProfileComplete ? <Hiring/> : <Navigate to="/profile" /> } />
         </Routes>
       </ThemeProvider>
       <Footer />
