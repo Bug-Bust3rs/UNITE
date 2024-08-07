@@ -23,12 +23,12 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:underline me-4 md:me-6">
+                <Link to="/hiring" className="hover:underline me-4 md:me-6">
                   Service
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:underline me-4 md:me-6">
+                <Link to="/contact" className="hover:underline me-4 md:me-6">
                   Contact
                 </Link>
               </li>
