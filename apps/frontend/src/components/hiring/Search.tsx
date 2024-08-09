@@ -1,8 +1,7 @@
-import Card from "./card"
 
 export default function Search() {
   return (
-    <div className="h-[1000px] mt-[3vh]">
+    <div className="h-[300px] mt-[3vh]">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto ">
       <div className="text-center mb-8 ">
         <h1 className="text-5xl text-slate-800 font-bold mb-2">Hire a Skilled<span className="text-blue-500"> Member </span></h1>
@@ -45,18 +44,7 @@ export default function Search() {
 
       </div>
 
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto mt-[20vh]">
-        <h1 className="text-5xl text-slate-900 font-bold ">Expert <span className="text-blue-600">Members</span> Nationwide</h1>
-        <p className="text-gray-600 mt-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ipsa fuga aperiam laboriosam maxime a maiores sapiente nostrum cumque sit voluptas illum, quis deleniti nobis, ducimus cum tempore quasi repellendus.</p>
-        <div className="max-w-screen-xl flex gap-5 justify-between mx-auto mt-[10vh] ">
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-      </div>
-     
-      </div>
+
 
     </div>
   )
