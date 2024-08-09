@@ -36,7 +36,7 @@
 
 ## 🛠️ Tech Stack
 
-**Create My-API supports a variety of technologies and databases:**
+**Unite supports a variety of technologies and databases:**
 
 <div align="center">
 
