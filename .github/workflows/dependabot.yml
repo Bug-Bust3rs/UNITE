@@ -1,0 +1,19 @@
+version: 2
+updates:
+ 
+  - package-ecosystem: "npm"
+    directory: "/apps/frontend" 
+    schedule:
+      interval: "daily" 
+    commit-message:
+      prefix: "chore" 
+    open-pull-requests-limit: 5
+
+  
+  - package-ecosystem: "npm"
+    directory: "/apps/backend" 
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    open-pull-requests-limit: 5
