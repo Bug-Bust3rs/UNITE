@@ -13,8 +13,8 @@ export default function ForgotPassword(): JSX.Element {
   };
 
   return (
-    <main className="w-full min-h-[120vh] flex dark:bg-slate-800">
-      <div className="grid grid-cols-1 md:grid-cols-2 m-auto px-6 py-5 h-[400px] sm:max-w-[850px] rounded-2xl dark:bg-slate-700 bg-white">
+    <main className="w-full min-h-[100vh] flex bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] dark:bg-slate-900  bg-cover">
+      <div className="grid grid-cols-1 md:grid-cols-2 m-auto px-2 py-2 h-[400px] sm:max-w-[850px] rounded-2xl dark:bg-slate-700 ">
         <div className="w-full h-[450px] hidden md:block">
           <img className="w-full mt-4 ml-2 h-[380px]" src={log_img} alt="Forgot Password" />
         </div>
