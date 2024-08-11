@@ -15,6 +15,7 @@ import { useAuthContext } from "./hooks/useAuthContext";
 import VerifiedPage from "./components/auth/VerifiedPage";
 import Offer from "./components/offer request/Offer-request";
 import Hiring from "./components/hiring/Hired";
+import Not_Found from "./components/not found/Not_Found";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/contact" element={isProfileComplete ? <Contact /> : <Navigate to="/profile" />} />
           <Route path="/offer-support" element={isProfileComplete ? <Offer /> : <Navigate to="/profile" />} />
           <Route path="/hiring" element= {isProfileComplete ? <Hiring/> : <Navigate to="/profile" /> } />
+          <Route path="/page-not-found" element={<Not_Found />} />
         </Routes>
       </ThemeProvider>
       <Footer />
