@@ -28,8 +28,8 @@ export default function Login(): JSX.Element {
   };
 
   return (
-    <main className="w-full min-h-[110vh] flex dark:bg-slate-800">
-      <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[450px] sm:max-w-[800px] rounded-2xl dark:bg-slate-700 bg-white">
+    <main className="w-full min-h-[110vh] flex bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] dark:bg-slate-900  bg-cover">
+      <div className="grid grid-cols-1 md:grid-cols-2 m-auto h-[450px] sm:max-w-[800px] rounded-2xl dark:bg-slate-700">
         <div className="w-full h-[300px] hidden md:block">
           <img className="mt-12" src={log_img} alt="Login illustration" />
         </div>
