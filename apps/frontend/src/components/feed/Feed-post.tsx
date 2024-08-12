@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "../ui/card"
-import { Avatar as Avatar1} from "../ui/avatar"
+import { Avatar as Avatar1 } from "../ui/avatar"
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
 import { SVGProps } from "react"
@@ -8,21 +8,50 @@ import { JSX } from "react/jsx-runtime"
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Avatar from "react-avatar";
 import { color } from "../../lib/utils";
+import AuthLoder from "../auth/AuthLoder";
+import usefetchProfile from "../../hooks/usefetchProfile";
+import ProfileLoder from "./ProfileLoder";
+import Postloder from "./Postloder"
 
 
 export function FeedPost() {
   const { state } = useAuthContext();
+  const userId = state.user?.id || 'id';
+  const { imageUrl, loading, error } = usefetchProfile(userId);
+
+  if (error) {
+    return <AuthLoder />;
+  }
+  // if (loading) {
+  //   return <ProfileLoder />
+  // }
+
   return (
+
     <div className="flex items-center justify-center">
       <Card className="w-full max-w-md rounded-xl">
         <CardContent className="p-4 md:p-6">
           <form className="grid gap-4">
             <div className="flex items-center gap-4">
-              <Avatar1 className="h-12 w-12 shrink-0 rounded-full">
-                {/* <AvatarImage src="/placeholder-user.jpg" />
-                <AvatarFallback>CN</AvatarFallback> */}
-                 <Avatar size="50" color={color} name={state.user?.name} round={true} />
-              </Avatar1>
+
+              {loading ? <Postloder /> : <>
+                {imageUrl ? (
+                  <img
+                    className="h-24 w-24 rounded-full mx-auto"
+                    src={imageUrl}
+                    alt="Randy Robertson"
+                  />
+                ) : (
+                  <Avatar1 className="h-12 w-12 shrink-0 rounded-full">
+                    {/* <AvatarImage src="/placeholder-user.jpg" />
+                                  <AvatarFallback>CN</AvatarFallback> */}
+                    <Avatar size="50" color={color} name={state.user?.name} round={true} />
+                  </Avatar1>
+                )}
+              </>}
+
+
+
               <Input placeholder="What's on your mind?" className="flex-1" />
             </div>
             <div className="flex items-center justify-between">
