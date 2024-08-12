@@ -1,53 +1,30 @@
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Avatar from "react-avatar";
-import { getRandomHexColor } from "../../lib/utils";
-import { useState, useEffect } from 'react'
+import { color} from "../../lib/utils";
 import ProfileLoder from "./ProfileLoder";
 import AuthLoder from "../auth/AuthLoder";
+import usefetchProfile from "../../hooks/usefetchProfile";
 
-import axios from 'axios';
 
 
 
 const AsideLeft = () => {
     const { state } = useAuthContext();
     const userId = state.user?.id || 'id';
-    const [imageUrl, setImageUrl] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
-
-    const fetchProfile = async () => {
-        setLoading(true);
-        setError(null);
-        try {
-            const response = await axios.get(`${import.meta.env.VITE_API}/api/v0.1/user/${userId}`);
-            console.log(response.data);
-            setImageUrl(response.data.image);
-        } catch (error) {
-            console.error('Error fetching profile:', error);
-            setError('Failed to load profile');
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        if (userId) {
-            fetchProfile();
-        }
-    }, [userId]);
+    const { imageUrl, loading, error } = usefetchProfile(userId);
 
     if (error) {
-        return <AuthLoder />
+        return <AuthLoder />;
     }
+
 
 
     return (
         // lg:fixed left-[12%] top-0 pt-8 lg:pt-20 
-        <div className="block ">
+        <div className=" w-full hidden lg:block mb-10 lg:mb-auto mt-10 lg:w-auto lg:fixed lg:left-[14.5%] 2xl:left-[14.5%] xl:left-[10%] top-0 pt-8 lg:pt-20 lg:mt-[20px] ">
             {/* my-10 */}
             <div className=" w-[90%] lg:w-auto mx-auto">
-                <div className="bg-white dark:bg-slate-800 overflow-hidden shadow-lg p-4 rounded-xl">
+                <div className="bg-white dark:bg-slate-900 overflow-hidden shadow-lg p-4 rounded-xl">
                     <div className="text-center p-6 border-b dark:border-slate-700">
 
                         {
@@ -62,7 +39,7 @@ const AsideLeft = () => {
                                         alt="Randy Robertson"
                                     />
                                 ) : (
-                                    <Avatar color={getRandomHexColor()} name={state.user?.name} round={true} />
+                                    <Avatar color={color} name={state.user?.name} round={true} />
                                 )}
                                 <p className="pt-2 text-lg font-semibold dark:text-white">{state.user?.name}</p>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">{state.user?.email}</p>

@@ -21,3 +21,6 @@ export function getRandomHexColor(): string {
 
   return `#${hexR}${hexG}${hexB}`;
 }
+
+
+export const color = getRandomHexColor();
