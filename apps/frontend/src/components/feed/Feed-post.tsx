@@ -7,7 +7,7 @@ import { SVGProps } from "react"
 import { JSX } from "react/jsx-runtime"
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Avatar from "react-avatar";
-import { getRandomHexColor } from "../../lib/utils";
+import { color } from "../../lib/utils";
 
 
 export function FeedPost() {
@@ -21,7 +21,7 @@ export function FeedPost() {
               <Avatar1 className="h-12 w-12 shrink-0 rounded-full">
                 {/* <AvatarImage src="/placeholder-user.jpg" />
                 <AvatarFallback>CN</AvatarFallback> */}
-                 <Avatar size="50" color={getRandomHexColor()} name={state.user?.name} round={true} />
+                 <Avatar size="50" color={color} name={state.user?.name} round={true} />
               </Avatar1>
               <Input placeholder="What's on your mind?" className="flex-1" />
             </div>

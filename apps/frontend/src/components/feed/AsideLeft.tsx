@@ -1,6 +1,6 @@
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Avatar from "react-avatar";
-import { getRandomHexColor } from "../../lib/utils";
+import { color} from "../../lib/utils";
 import { useState, useEffect } from 'react'
 import ProfileLoder from "./ProfileLoder";
 import AuthLoder from "../auth/AuthLoder";
@@ -62,7 +62,7 @@ const AsideLeft = () => {
                                         alt="Randy Robertson"
                                     />
                                 ) : (
-                                    <Avatar color={getRandomHexColor()} name={state.user?.name} round={true} />
+                                    <Avatar color={color} name={state.user?.name} round={true} />
                                 )}
                                 <p className="pt-2 text-lg font-semibold dark:text-white">{state.user?.name}</p>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">{state.user?.email}</p>
