@@ -21,7 +21,7 @@ const AsideLeft = () => {
 
     return (
         // lg:fixed left-[12%] top-0 pt-8 lg:pt-20 
-        <div className="block ">
+        <div className=" w-full hidden lg:block mb-10 lg:mb-auto mt-10 lg:w-auto lg:fixed lg:left-[14.5%] 2xl:left-[14.5%] xl:left-[10%] top-0 pt-8 lg:pt-20 lg:mt-[20px] ">
             {/* my-10 */}
             <div className=" w-[90%] lg:w-auto mx-auto">
                 <div className="bg-white dark:bg-slate-900 overflow-hidden shadow-lg p-4 rounded-xl">
