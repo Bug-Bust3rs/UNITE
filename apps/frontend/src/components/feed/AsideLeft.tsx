@@ -24,7 +24,7 @@ const AsideLeft = () => {
         <div className="block ">
             {/* my-10 */}
             <div className=" w-[90%] lg:w-auto mx-auto">
-                <div className="bg-white dark:bg-slate-800 overflow-hidden shadow-lg p-4 rounded-xl">
+                <div className="bg-white dark:bg-slate-900 overflow-hidden shadow-lg p-4 rounded-xl">
                     <div className="text-center p-6 border-b dark:border-slate-700">
 
                         {

@@ -4,7 +4,7 @@ const MainFeed = () => {
     return (
         <div className=''>
 
-            <div className="bg-white dark:bg-slate-800 p-5 lg:p-8 shadow-md rounded-lg">
+            <div className="bg-white dark:bg-slate-900 p-5 lg:p-8 shadow-md rounded-lg">
 
                 <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-2">

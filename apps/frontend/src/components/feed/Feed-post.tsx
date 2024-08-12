@@ -10,7 +10,6 @@ import Avatar from "react-avatar";
 import { color } from "../../lib/utils";
 import AuthLoder from "../auth/AuthLoder";
 import usefetchProfile from "../../hooks/usefetchProfile";
-import ProfileLoder from "./ProfileLoder";
 import Postloder from "./Postloder"
 
 
@@ -28,8 +27,8 @@ export function FeedPost() {
 
   return (
 
-    <div className="flex items-center justify-center">
-      <Card className="w-full max-w-md rounded-xl">
+    <div className="flex items-center justify-center dark:bg-slate-900">
+      <Card className="w-full max-w-md rounded-xl dark:bg-slate-900">
         <CardContent className="p-4 md:p-6">
           <form className="grid gap-4">
             <div className="flex items-center gap-4">
