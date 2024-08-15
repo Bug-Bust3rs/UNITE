@@ -137,8 +137,10 @@ import { Link } from "react-router-dom"
 
 import { SVGProps } from "react"
 
+import req_img from "../../assets/contact-us-animate (1).svg";
 
-export default function Component() {
+
+export default function OfferReq() {
 
 const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -148,8 +150,8 @@ const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
       <section className="w-full py-2 md:py-5 lg:py-5">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
-            <h1 className="text-4xl font-bold tracking-tighter text-slate-800 md:text-5xl/tight">Offer <span className="text-blue-500"> Support</span></h1>
-            <p className="mx-auto max-w-[700px] text-slate-400 md:text-xl lg:text-base xl:text-xl">
+            <h1 className="text-4xl font-bold tracking-tighter text-slate-800 md:text-5xl/tight dark:text-white">Offer <span className="text-blue-500"> Support</span></h1>
+            <p className="mx-auto max-w-[700px] text-slate-400 md:text-xl lg:text-base xl:text-xl dark:text-white">
               We're here to help. Choose from our support options or contact us directly.
             </p>
           </div>
@@ -167,7 +169,7 @@ const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
           <div className="flex flex-col items-start gap-2 rounded-xl bg-card p-6 shadow-2xl">
             <PhoneIcon className="size-6 text-primary" />
             <h3 className="text-lg font-medium">Phone Support</h3>
-            <p className="text-muted-foreground">Speak with one of our support representatives by phone.</p>
+            <p className="text-muted-foreground  dark:text-white">Speak with one of our support representatives by phone.</p>
             <Link
               to="#"
               className="inline-flex h-9 items-center justify-center bg-primary px-4 py-2 active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-xl bg-gradient-to-r from-blue-700 to-blue-500 text-white text-sm font-semibold"
@@ -179,7 +181,7 @@ const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
           <div className="flex flex-col items-start gap-2 rounded-xl bg-card p-6 shadow-2xl">
             <WebcamIcon className="size-6 text-primary" />
             <h3 className="text-lg font-medium">Live Chat</h3>
-            <p className="text-muted-foreground">Chat with a support agent or community member in real-time.</p>
+            <p className="text-muted-foreground  dark:text-white">Chat with a support agent or community member in real-time.</p>
             <Link
               to="#"
               className="inline-flex h-9 items-center justify-center  bg-primary px-4 py-2 text-sm active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-xl bg-gradient-to-r from-blue-700 to-blue-500 text-white  font-semibold"
@@ -191,7 +193,7 @@ const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
           <div className="flex flex-col items-start gap-2 rounded-xl bg-card p-6 shadow-2xl">
             <MailIcon className="size-6 text-primary" />
             <h3 className="text-lg font-medium">Email Support</h3>
-            <p className="text-muted-foreground">Send us an email and we'll get back to you and help you.</p>
+            <p className="text-muted-foreground  dark:text-white">Send us an email and we'll get back to you and help you.</p>
             <Link
               to="#"
               className="inline-flex h-9 items-center justify-center bg-primary px-4 py-2 text-sm active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold"
@@ -203,7 +205,7 @@ const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
           <div className="flex flex-col items-start gap-2 rounded-xl bg-card p-6 shadow-2xl">
             <BookIcon className="size-6 text-primary" />
             <h3 className="text-lg font-medium">Knowledge Base</h3>
-            <p className="text-muted-foreground">Browse our library of articles and guides you how to help.</p>
+            <p className="text-muted-foreground  dark:text-white ">Browse our library of articles and guides you how to help.</p>
             <Link
               to="#"
               className="inline-flex h-9 items-center justify-center bg-primary px-4 py-2 text-sm active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold"
@@ -215,7 +217,7 @@ const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
           <div className="flex flex-col items-start gap-2 rounded-xl bg-card p-6 shadow-2xl">
             <TicketIcon className="size-6 text-primary" />
             <h3 className="text-lg font-medium">Submit a Offer</h3>
-            <p className="text-muted-foreground">Open a support offer to help the community and we'll assist you.</p>
+            <p className="text-muted-foreground  dark:text-white ">Open a support offer to help the community and we'll assist you.</p>
             <Link
               to="#"
               className="inline-flex h-9 items-center justify-center bg-primary px-4 py-2 text-sm active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold"
@@ -226,8 +228,8 @@ const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
           </div>
           <div className="flex flex-col items-start gap-2 rounded-xl bg-card p-6 shadow-2xl">
             <CalendarIcon className="size-6 text-primary" />
-            <h3 className="text-lg font-medium">Schedule a Social Work</h3>
-            <p className="text-muted-foreground">Book a time to speak with a support representative.</p>
+            <h3 className="text-lg font-medium ">Schedule a Social Work</h3>
+            <p className="text-muted-foreground dark:text-white">Book a time to speak with a support representative.</p>
             <Link
               to="#"
               className="inline-flex h-9 items-center justify-center bg-primary px-4 py-2 text-sm active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-xl bg-gradient-to-r from-blue-700 to-blue-500 text-white font-semibold"
@@ -241,56 +243,67 @@ const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
       <section className="w-full py-2 md:py-5 lg:py-10">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter text-slate-800 md:text-5xl/tight">Contact <span className="text-blue-600">Us</span></h2>
-            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <h2 className="text-3xl font-bold tracking-tighter text-slate-800 md:text-5xl/tight dark:text-white">Contact <span className="text-blue-600">Us</span></h2>
+            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-white">
               Have a question or need help? Fill out the form below and we'll get back to you as soon as possible.
             </p>
           </div>
-          <div className="p-4 ml-[45vh] justify-center grid grid-cols-1 md:grid-cols-2">
-          <form onSubmit={handleClick}>
-            <div className="mt-3">
-              <label className="poppins-medium ml-10 text-slate-600 dark:text-slate-300"> Enter your full Name</label>
-              <input
-                className="border px-4 py-2 w-[450px] rounded-xl bg-slate-100 dark:bg-slate-600 mt-3 dark:border-slate-600"
-                type="username"
-                placeholder="eg. John Doe"
-
-              />
-            </div>
-            <div className="mt-3">
-              <label className="poppins-medium ml-10 text-slate-600 dark:text-slate-300">Email Address</label>
-              <input
-                className="border px-4 py-2 w-[450px] rounded-xl bg-slate-100 dark:bg-slate-600 mt-3 dark:border-slate-600"
-                type="email"
-                placeholder="example@gmail.com"
-
-              />
-            </div>
-            <div className="mt-3">
-              <label className="poppins-medium ml-10 text-slate-600 dark:text-slate-300">Enter your Subject</label>
-              <input
-                className="border px-3 py-2 w-[450px] rounded-xl bg-slate-100 dark:bg-slate-600 mt-3 dark:border-slate-600"
-                type="phone"
-                placeholder="Your Subject"
-
-              />
-            </div>
-            <div className="mt-3">
-              <label className="poppins-medium ml-10 text-slate-600 dark:text-slate-300">Enter your Message</label>
-              <textarea
-                className="border py-2 px-4 resize-none text-base w-[450px] h-[100px] rounded-xl bg-slate-100 dark:bg-slate-600 mt-3 dark:border-slate-600"
-                placeholder="Your Message"    
-              />
-            </div>
-            <button
-              className="ml-[10vh] mt-[5vh] w-[180px] active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold poppins-extrabold"
-              key="1"
-            >
-              Send →
-            </button>
-          </form>
-          </div>
+          <div className="w-full flex">
+           <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="w-full h-[450px] md:block">
+          <img
+            className="w-full h-[380px]"
+            src={req_img}
+            alt="Contact Ilustration"
+          />
         </div>
+        <div className="p-5 ">
+        <form onSubmit={handleClick}>
+        <div className="mr-[35vh]">
+         <input
+           id="fullName"
+           name="fullName"
+           className="border px-4 py-2 mt-4  w-[400px] rounded-xl bg-slate-100 dark:bg-slate-600 dark:border-slate-600 "
+           type="text"
+           placeholder="Enter your Name"
+            />
+         <input
+         id="email"
+         name="email"
+         className="border px-4 py-2 mt-4 w-[400px] rounded-xl bg-slate-100 dark:bg-slate-600 dark:border-slate-600"
+         type="email"
+         placeholder="Enter your email address"
+         />
+
+         <input
+         id="subject"
+         name="subject"
+         className="border px-3 py-2 mt-4 w-[400px] rounded-xl bg-slate-100 dark:bg-slate-600 dark:border-slate-600"
+         type="text"
+         placeholder="Enter Your Subject"
+         />
+
+       <textarea
+        id="message"
+        name="message"
+        className="border py-2 px-4 mt-4 resize-y text-base w-[400px] h-[100px] rounded-xl bg-slate-100 dark:bg-slate-600 dark:border-slate-600"
+        placeholder="Describe Your Message"
+        />
+     </div>
+
+  <button
+    type="submit"
+    className="mt-[5vh] mr-[20vh] w-[180px] active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold poppins-extrabold"
+  >
+    Submit
+         </button>
+    </form>
+
+
+        </div>
+      </div>
+      </div>
+      </div>
       </section>
     </div>
   )
