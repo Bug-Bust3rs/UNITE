@@ -1,106 +1,118 @@
-import { useState } from 'react';
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleOpen = () => setIsOpen(!isOpen);
-
-  return (
-    <div className="mb-4">
-      <button
-        onClick={toggleOpen}
-        className="w-full text-left font-medium text-gray-700 py-2 flex justify-between items-center"
-      >
-        {question}
-        <span className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`}>
-          ▼
-        </span>
-      </button>
-      {isOpen && <p className="text-gray-600 mt-2 bg-slate-300 p-3 rounded-xl">{answer}</p>}
-    </div>
-  );
-};
-
-
+import reg_img from "../../assets/humanitarian-help-animate (1).svg";
+import FAQSection from "./FaQ"
 
 export default function HelpRequest() {
 
 return (
-  <div className="bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-cover " >    
-      <div className="max-w-xl w-full mx-auto p-6 sm:p-8 mt-10 ">
-      <h2 className="text-3xl sm:text-4xl font-bold ml-16 mb-10 sm:mb-14">Help <span className='text-blue-600'>Request</span> Assistance</h2>
-      <form>
-        <div className="mb-3 sm:mb-4">
-          <label className="block text-gray-700 mb-1 sm:mb-2">Name</label>
+  <div className="w-full mx-auto p-6  sm:p-8  bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-cover mt-[10vh] " >    
+      <div className="">
+      <h2 className="text-3xl font-bold leading-tight text-center sm:text-4xl lg:text-5xl">Help <span className='text-blue-600'>Request</span> Assistance</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 m-auto sm:max-w-[120vh] rounded-2xl ">
+        <div className="w-full h-[450px] md:block">
+          <img
+            className="w-full mt-[100px] ml-2 h-[480px]"
+            src={reg_img}
+            alt="Register illustration"
+          />
+        </div>
+        <div className=" p-4 flex flex-col justify-around">
+          <form>
+          <div className="mt-16">
+          <label
+            htmlFor="username"
+            className="poppins-medium ml-1 text-slate-600 dark:text-slate-300"
+          >
+            Enter Username
+          </label>
           <input
+            id="username"
+            className="border border-black px-3 py-2 w-[350px] rounded-2xl bg-white focus:bg-gray-50 focus:ring-1 focus:border-none ring-blue-500 dark:bg-slate-600 mt-3 dark:border-slate-600"
             type="text"
-            className="w-full p-1 sm:p-2 border border-gray-300 rounded-2xl"
-            placeholder="Enter your full name"
+            placeholder="e.g. John Doe"
+ 
           />
         </div>
 
-        <div className="mb-3 sm:mb-4">
-          <label className="block text-gray-700 mb-1 sm:mb-2">Email</label>
+        <div className="mt-3">
+          <label
+            htmlFor="email"
+            className="poppins-medium ml-1 text-slate-600 dark:text-slate-300"
+          >
+            Email Address
+          </label>
           <input
+            id="email"
+            className="border border-black px-3 py-2 w-[350px] rounded-2xl bg-white focus:bg-gray-50 focus:ring-1 focus:border-none ring-blue-500 dark:bg-slate-600 mt-3 dark:border-slate-600"
             type="email"
-            className="w-full p-1 sm:p-2 border border-gray-300 rounded-2xl"
+            placeholder="example@gmail.com"
 
-            placeholder="Enter your email address"
           />
         </div>
 
-        <div className="mb-3 sm:mb-4">
-          <label className="block text-gray-700 mb-1 sm:mb-2">Phone</label>
+        <div className="mt-3">
+          <label
+            htmlFor="phonenumber"
+            className="poppins-medium ml-1 text-slate-600 dark:text-slate-300"
+          >
+            Phone Number
+          </label>
           <input
+            id="phonenumber"
+            className="border border-black px-3 py-2 w-[350px] rounded-2xl bg-white focus:bg-gray-50 focus:ring-1 focus:border-none ring-blue-500 dark:bg-slate-600 mt-3 dark:border-slate-600"
             type="tel"
-            className="w-full p-1 sm:p-2 border border-gray-300 rounded"
-            placeholder="Enter your phone number"
+            placeholder="+91 9876543210"
+ 
           />
         </div>
 
-        <div className="mb-3 sm:mb-4">
-          <label className="block text-gray-700 mb-1 sm:mb-2">Assistance Needed</label>
+        <div className="mt-3">
+          <label
+            htmlFor="assistance"
+            className="poppins-medium ml-1 text-slate-600 dark:text-slate-300"
+          >
+            Assistance Needed
+          </label>
           <textarea
-            className="w-full p-1 sm:p-2 border border-gray-300 rounded"
+            id="assistance"
+            className="border border-black px-3 py-2 w-[350px] rounded-xl bg-white focus:bg-gray-50 focus:ring-1 focus:border-none ring-blue-500 dark:bg-slate-600 mt-3 dark:border-slate-600"
             placeholder="Describe the type of assistance you need"
+
           />
         </div>
 
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-1 sm:mb-2">Upload Document</label>
+        <div className="mt-3">
+          <label
+            htmlFor="document"
+            className="poppins-medium ml-1 text-slate-600 dark:text-slate-300"
+          >
+            Upload Document
+          </label>
           <input
+            id="document"
             type="file"
-            className="w-full p-1 sm:p-2 border border-gray-300 rounded"
+            className="border border-black px-3 py-2 w-[350px] rounded-2xl bg-white focus:bg-gray-50 focus:ring-1 focus:border-none ring-blue-500 dark:bg-slate-600 mt-3 dark:border-slate-600"
+     
           />
         </div>
 
         <button
           type="submit"
-          className="w-full active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold"
+          className="ml-[60px] mt-6 w-[220px] active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2.5 rounded-3xl bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold"
         >
-          Submit Request
+          Request
         </button>
-      </form>
-
-      <div className="mt-8">
-        <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Frequently Asked Questions</h3>
-        <FAQItem 
-          question="What types of assistance are available?" 
-          answer="Various types of assistance are available, including financial aid, food supplies, and medical support." 
-        />
-        <FAQItem 
-          question="How long does the application process take?" 
-          answer="The application process typically takes 1-2 weeks depending on the volume of requests." 
-         />
-         <FAQItem 
-          question="What documentation is required?" 
-          answer="You will need to provide proof of identity, proof of residence, and any documents relevant to your request." 
-         />
-         </div>
+       </form>
        </div>
-     </div>  
+     </div> 
+     <FAQSection/>
+    </div>
+  </div>
+   
      )
   }
+
+  
 
 
   
