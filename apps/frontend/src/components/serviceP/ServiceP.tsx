@@ -2,7 +2,7 @@ import log_img from "../../assets/delivery-animate.svg"
 
 export default function ServiceP() {
   return (
-    <div className="mt-[10vh]">
+    <div className="mt-[10vh] bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] dark:bg-slate-900  bg-cover">
       <div>
         <div>
         <section className="w-full py-3 sm:py-8 lg:py-15">
