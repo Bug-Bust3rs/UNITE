@@ -42,7 +42,7 @@ function App() {
           <Route path="/hiring" element= {isProfileComplete ? <Hiring/> : <Navigate to="/profile" /> } />
           <Route path="/help-request" element={isProfileComplete ? <HelpRequest /> : <Navigate to="/profile" /> } />
           <Route path="/services" element={isProfileComplete ? <ServiceP/>  : <Navigate to="/profile" /> } />
-          <Route path="/page-not-found" element={<Not_Found />} />
+          <Route path="*" element={<Not_Found />} />
         </Routes>
       </ThemeProvider>
       <Footer />
