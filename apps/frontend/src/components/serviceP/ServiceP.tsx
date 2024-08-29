@@ -52,6 +52,9 @@ export default function ServiceP() {
                       <option value="ELECTRICIAN">ELECTRICIAN</option>
                       <option value="PLUMBER">PLUMBER</option>
                       <option value="CARPENTER">CARPENTER</option>
+                      <option value="FISHERMAN">FISHERMAN</option>
+                      <option value="PAINTER">PAINTER</option>
+
                     </select>
                 </div>
               </div>
