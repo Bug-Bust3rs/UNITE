@@ -43,7 +43,7 @@ function App() {
           <Route path="/hiring" element= {isProfileComplete ? <Hiring/> : <Navigate to="/profile" /> } />
           <Route path="/help-request" element={isProfileComplete ? <HelpRequest /> : <Navigate to="/profile" /> } />
           <Route path="/services" element={isProfileComplete ? <ServiceP/>  : <Navigate to="/profile" /> }/>
-          <Route path="/market-place" element={isProfileComplete ? <Component/>  : <Navigate to="/profile" /> }/>
+          <Route path="/market-place" element={<Component/> }/>
           <Route path="*" element={<Not_Found />} />
         </Routes>
       </ThemeProvider>
