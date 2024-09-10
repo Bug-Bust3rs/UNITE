@@ -7,13 +7,13 @@ interface Item {
   name: string;
   condition: string;
   price: number;
-  verified: boolean;  // New property to indicate if the product is verified
-  description: string; // New property for product description
-  username: string;    // New property for the user's name
-  image: string;       // New property for the user's image
+  verified: boolean;  
+  description: string; 
+  username: string;   
+  image: string;       
 }
 
-// Props for the ItemCard component
+
 interface ItemCardProps {
   item: Item;
   onAddToCart: (item: Item) => void;
@@ -42,7 +42,7 @@ function ItemCard({ item, onAddToCart }: ItemCardProps) {
           <span className="text-sm font-medium text-muted-foreground">Condition: {item.condition}</span>
           <span className="text-lg font-bold">${item.price}</span>
         </div>
-        <button className="mt-4 w-full bg-primary text-white py-2 rounded-md" onClick={() => onAddToCart(item)}>
+        <button className="mt-4 w-full active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all p-2 rounded-2xl bg-gradient-to-r from-blue-700 to-blue-500 text-white text-lg font-semibold" onClick={() => onAddToCart(item)}>
           Add to Cart
         </button>
       </div>
@@ -50,7 +50,7 @@ function ItemCard({ item, onAddToCart }: ItemCardProps) {
   );
 }
 
-// Props for the Cart component
+
 interface CartProps {
   cart: Item[];
   onRemoveFromCart: (itemId: number) => void;
@@ -126,8 +126,8 @@ export default function Component() {
   return (
     <div className="flex flex-col min-h-screen">
         <div className="text-center mb-8 mt-24 z-10"> 
-        <h1 className="text-5xl text-slate-800 font-bold mb-2">
-          Market<span className="text-blue-500">Place</span>
+        <h1 className="text-5xl font-bold mb-2">
+          Market<span className="text-blue-500"> Place</span>
         </h1>
         <p className="mx-auto max-w-[700px] text-slate-400 md:text-xl lg:text-base xl:text-xl dark:text-white">
         Turning Trash into Treasure: Your e-Waste, Our Marketplace!
@@ -157,6 +157,8 @@ export default function Component() {
           <option value="power">Power & Accessories</option>
         </select>
       </div>
+      <h2 className='text-2xl ml-6 font-semibold mb-5'>E-Waste Category</h2>
+      <hr/>
       <main className="flex-1 bg-background py-8 px-6">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
