@@ -18,7 +18,7 @@ import Hiring from "./components/hiring/Hired";
 import Not_Found from "./components/not found/Not_Found";
 import HelpRequest from "./components/help request/HelpRequest";
 import ServiceP from "./components/serviceP/ServiceP";
-import Component from "./components/marketplace/Card";
+import MarketPlace from "./components/marketplace/Card";
 
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
           <Route path="/hiring" element= {isProfileComplete ? <Hiring/> : <Navigate to="/profile" /> } />
           <Route path="/help-request" element={isProfileComplete ? <HelpRequest /> : <Navigate to="/profile" /> } />
           <Route path="/services" element={isProfileComplete ? <ServiceP/>  : <Navigate to="/profile" /> }/>
-          <Route path="/market-place" element={<Component/> }/>
+          <Route path="/market-place" element={<MarketPlace/> }/>
           <Route path="*" element={<Not_Found />} />
         </Routes>
       </ThemeProvider>
