@@ -1,71 +1,81 @@
 import { Prisma } from "@prisma/client";
 import bcrypt from "bcryptjs";
-import { Request, Response } from "express";
+import { Request, Response, RequestHandler } from "express";
 import validator from "validator";
 import prisma from "../config/prisma.config";
 import { sendEmail } from "../lib/emailService";
 import { sendOTP } from "../lib/otpService";
 import { createToken } from "../lib/tokenConfig";
 
-export const register = async (req: Request, res: Response) => {
+export const register: RequestHandler = async (req: Request, res: Response) => {
   const { name, email, password, phone } = req.body;
 
   if (!name || !email || !password || !phone) {
-    return res.status(400).json({ message: "All fields must be filled" });
+    res.status(400).json({ message: "All fields must be filled" });
+    return;
   }
   if (!validator.isEmail(email)) {
-    return res.status(400).json({ message: "Email is not valid" });
+    res.status(400).json({ message: "Email is not valid" });
+    return;
   }
+
   try {
     const exists = await prisma.user.findUnique({ where: { email } });
     if (exists) {
-      return res.status(400).json({ message: "Email already in use" });
+      res.status(400).json({ message: "Email already in use" });
+      return;
     }
+
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt);
-    const user = await prisma.$transaction(async (prisma) => {
+    // @ts-ignore
+    const user = await prisma.$transaction(async (prisma: Prisma) => {
       const newUser = await prisma.user.create({
         data: { name, email, password: hash, phone },
       });
-
       const token = createToken(newUser.id);
       return { user: newUser, token };
     });
+
     await sendEmail(user.user.id);
-    return res
-      .status(200)
-      .json({ success: true, message: "Verification email sent" });
-  } catch (error) {
+    res.status(200).json({ success: true, message: "Verification email sent" });
+  } catch (error: unknown) {
     console.error("Registration error:", error);
-    if (error instanceof Prisma.PrismaClientKnownRequestError) {
-      return res.status(400).json({ message: error.message, success: false });
+    if (error) {
+      res.status(400).json({ message: error, success: false });
+    } else if (error instanceof Error) {
+      res.status(500).json({ message: error.message, success: false });
     } else {
-      return res
-        .status(500)
-        .json({ message: "Registration failed.", success: false });
+      res.status(500).json({ message: "Registration failed.", success: false });
     }
   }
 };
 
-export const verifyEmail = async (req: Request, res: Response) => {
+export const verifyEmail: RequestHandler = async (req: Request, res: Response) => {
   const { token } = req.query;
   const { userId } = req.params;
-  if (!token || typeof token !== "string")
-    return res.status(400).send("Token not provided or invalid");
+
+  if (!token || typeof token !== "string") {
+    res.status(400).send("Token not provided or invalid");
+    return;
+  }
 
   const verificationToken = await prisma.oTP.findFirst({
     where: { otp: token },
   });
-  if (!verificationToken)
-    return res.status(404).json({ success: false, message: "Invalid token" });
+  if (!verificationToken) {
+    res.status(404).json({ success: false, message: "Invalid token" });
+    return;
+  }
 
-  if (verificationToken.expiresAt < new Date())
-    return res
-      .status(400)
-      .json({ success: false, message: "Token has expired" });
+  if (verificationToken.expiresAt < new Date()) {
+    res.status(400).json({ success: false, message: "Token has expired" });
+    return;
+  }
 
   if (verificationToken.authorId !== userId) {
-    return res.status(403).json({ success: false, message: "Unauthorized" });
+    res.status(403).json({ success: false, message: "Unauthorized" });
+    return;
   }
 
   await prisma.user.update({
@@ -75,77 +85,89 @@ export const verifyEmail = async (req: Request, res: Response) => {
 
   await prisma.oTP.delete({ where: { id: verificationToken.id } });
 
-  res.status(200).send({
+  res.status(200).json({
     success: true,
     message: "Verified User! Our frontend page will be ready soon!",
   });
 };
 
-export const login = async (req: Request, res: Response) => {
+export const login: RequestHandler = async (req: Request, res: Response) => {
   const { email, password } = req.body;
+
   if (!email || !password) {
-    throw Error("All fields must be filled");
+    res.status(400).json({ message: "All fields must be filled" });
+    return;
   }
+
   try {
     const user = await prisma.user.findUnique({ where: { email } });
     if (!user) {
-      throw new Error("Invalid credentials");
+      res.status(400).json({ message: "Invalid credentials" });
+      return;
     }
     if (!user.isVerified) {
       await sendEmail(user.id);
-      return res.status(200).json({
+      res.status(200).json({
         success: true,
-        message: "At First Verify Your Email,A Verification email sent.",
+        message: "Verify your email first. A verification email has been sent.",
       });
+      return;
     }
+
     const match = await bcrypt.compare(password, user.password);
     if (!match) {
-      throw new Error("Invalid credentials");
+      res.status(400).json({ message: "Invalid credentials" });
+      return;
     }
-    await sendOTP(user.id);
 
-    return res.status(200).json({
-      message: "OTP Send successfull!",
-      success: true,
-    });
-  } catch (error) {
+    await sendOTP(user.id);
+    res.status(200).json({ message: "OTP sent successfully!", success: true });
+  } catch (error: unknown) {
     console.error("Login error:", error);
-    return res.status(500).json({ message: "Login failed.", success: false });
+    res.status(500).json({ message: "Login failed.", success: false });
   }
 };
 
-export const verifyOTP = async (req: Request, res: Response) => {
+export const verifyOTP: RequestHandler = async (req: Request, res: Response) => {
   const { token } = req.query;
   const { userId } = req.params;
-  if (!token || typeof token !== "string")
-    return res.status(400).send("Token not provided or invalid");
-  let email = userId;
-  const userData = await prisma.user.findUnique({ where: { email } });
-  console.log(userData);
-  if(!userData){
-    return res.status(400).json({ success: false, message: "User Not Found!" });
-  }  
+
+  if (!token || typeof token !== "string") {
+    res.status(400).send("Token not provided or invalid");
+    return;
+  }
+
+  const userData = await prisma.user.findUnique({ where: { email: userId } });
+  if (!userData) {
+    res.status(400).json({ success: false, message: "User Not Found!" });
+    return;
+  }
 
   const verificationToken = await prisma.oTP.findFirst({
     where: { otp: token, authorId: userData.id },
   });
-  if (!verificationToken)
-    return res.status(404).json({ success: false, message: "Invalid token" });
+  if (!verificationToken) {
+    res.status(404).json({ success: false, message: "Invalid token" });
+    return;
+  }
 
-  if (verificationToken.expiresAt < new Date())
-    return res
-      .status(400)
-      .json({ success: false, message: "Token has expired" });
+  if (verificationToken.expiresAt < new Date()) {
+    res.status(400).json({ success: false, message: "Token has expired" });
+    return;
+  }
 
   await prisma.oTP.delete({ where: { id: verificationToken.id } });
+
   const user = await prisma.user.findUnique({
     where: { id: verificationToken.authorId },
   });
   if (!user) {
-    return res.status(400).json({ success: false, message: "User Not Found!" });
+    res.status(400).json({ success: false, message: "User Not Found!" });
+    return;
   }
+
   const jwttoken = createToken(verificationToken.authorId);
-  return res.status(200).json({
+  res.status(200).json({
     message: "Login successful!",
     success: true,
     token: jwttoken,
@@ -153,6 +175,6 @@ export const verifyOTP = async (req: Request, res: Response) => {
     id: user.id,
     name: user.name,
     image: user.image,
-    isProfileComplete : user.isProfileComplete
+    isProfileComplete: user.isProfileComplete,
   });
 };

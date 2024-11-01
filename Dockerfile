@@ -1,1 +1,1 @@
-RUN echo hello word
+FROM node:latest
