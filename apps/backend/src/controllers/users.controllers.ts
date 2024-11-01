@@ -5,7 +5,7 @@ export const getUser = async (req: Request, res: Response) => {
     
 
     const users = await prisma.user.findMany();
-    return res.status(201).json(users
+    res.status(201).json(users
     );
 };
 
@@ -16,7 +16,8 @@ export const getUserData = async (req: Request, res: Response) => {
     try {
       const profile = await prisma.user.findUnique({ where: { id } });
       if (!profile) {
-        return res.status(404).json({ error: "User not found" });
+       res.status(404).json({ error: "User not found" });
+       return;
       }
       res.status(200).json(profile);
     } catch (error) {
@@ -41,7 +42,7 @@ export const updateUser = async (req: Request, res: Response) => {
             location
         },
     });
-    return res.status(201).json({
+   res.status(201).json({
         message: "User data updated"
     });
 };
@@ -55,9 +56,9 @@ export const deleteUser = async (req: Request, res: Response) => {
                 id: userId
             }
         });
-        return res.status(404).json({ message: 'User not found' });
+         res.status(404).json({ message: 'User not found' });
     } catch (error) {
-        return res.status(200).json({ message: 'user deleted!' });
+        res.status(200).json({ message: 'user deleted!' });
     }
 
 

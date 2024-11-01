@@ -34,6 +34,16 @@
 - [Node.js](https://nodejs.org/) installed on your machine 🟩
 - [Git](https://git-scm.com/) installed on your machine 🐙
 
+### Change Permission
+```
+  chmod +x setup.sh
+```
+
+### Execute the file
+```
+  ./setup.sh
+```
+
 ## 🛠️ Tech Stack
 
 **Unite supports a variety of technologies and databases:**
