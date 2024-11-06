@@ -94,7 +94,7 @@ function Cart({ cart, onRemoveFromCart }: CartProps) {
   );
 }
 
-export default function Component() {
+export default function MarketPlace() {
   const [searchTerm] = useState<string>('');
   const [cart, setCart] = useState<Item[]>([]);
   const [searchQuery, setSearchQuery] = useState('');

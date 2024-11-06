@@ -25,7 +25,7 @@ export function FeedPost() {
 
   return (
 
-    <div className="mt-[4rem] mb-8 lg:mb-auto mx-auto flex items-center justify-center dark:bg-slate-900 lg:fixed lg:right-[12%] xl:right-[6.3%] 2xl:right-[12.4%] top-0 lg:mt-[100px] ">
+    <div className="mt-[4rem] mb-8 lg:mb-auto mx-auto flex items-center justify-center dark:bg-slate-900 lg:fixed lg:right-[12%] xl:right-[6.3%] 2xl:right-[11.2%] top-0 lg:mt-[100px] ">
       <Card className=" rounded-xl dark:bg-slate-900">
         <CardContent className="px-[2.9rem] py-4 sm:px-[9rem] sm: lg:py-auto lg:px-auto lg:p-4 md:p-6">
           <form className="grid gap-4">
